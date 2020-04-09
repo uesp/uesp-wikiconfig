@@ -61,7 +61,9 @@ function uespMobileInit (&$title, &$article, &$output, &$user, $request, $mediaW
 	
 	if ($mobileAction == "toggle_view_desktop")
 	{
+		MobileContext::singleton()->setForceMobileView(false);
 		MobileContext::singleton()->setUseFormat('desktop');
+		setcookie('mf_useformat', '', time() - 3600, '', 'uesp.net');
 		
 		if ($domainIsMobile) 
 		{
