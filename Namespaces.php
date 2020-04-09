@@ -37,6 +37,7 @@ array(	100 => 'Tamold',        101 => 'Tamold_talk',
 		154 => 'Tes1Mod',       155 => 'Tes1Mod_talk',
 		156 => 'Tes2Mod',       157 => 'Tes2Mod_talk',
 		158 => 'Call_to_Arms',  159 => 'Call_to_Arms_talk',
+		160 => 'TesOtherMod',   161 => 'TesOtherMod_talk',
 		200 => 'Dapel',         201 => 'Dapel_talk');
 
 $wgNamespaceAliases =
@@ -72,6 +73,7 @@ array(	'UESP' => NS_PROJECT, 'UESP_talk' => NS_PROJECT+1,
 		'CA' => 158,          'CA_talk' => 159,
 		'CtA' => 158,         'CtA_talk' => 159,
 		'Call' => 158,        'Call_talk' => 159,
+		'TOther' => 160,         'TOther_talk' => 161,
 );
 
 $wgNamespacesWithSubpages = array(
@@ -84,6 +86,7 @@ $wgNamespacesWithSubpages = array(
 		130 => 1, 131 => 1, 132 => 1, 133 => 1, 134 => 1, 135 => 1, 136 => 1, 137 => 1, 138 => 1, 139 => 1,
 		140 => 1, 141 => 1, 142 => 1, 143 => 1, 144 => 1, 145 => 1, 146 => 1, 147 => 1, 148 => 1, 149 => 1,
 		150 => 1, 151 => 1, 152 => 1, 153 => 1, 154 => 1, 155 => 1, 156 => 1, 157 => 1, 158 => 1, 159 => 1,
+		160 => 1, 161 => 1,
 		200 => 1, 201 => 1);
 
 $wgNamespacesToBeSearchedDefault = array(
@@ -96,6 +99,7 @@ $wgNamespacesToBeSearchedDefault = array(
 		130 => 1, 131 => 0, 132 => 1, 133 => 0, 134 => 1, 135 => 0, 136 => 1, 137 => 0, 138 => 1, 139 => 0,
 		140 => 1, 141 => 0, 142 => 1, 143 => 0, 144 => 1, 145 => 0, 146 => 1, 147 => 0, 148 => 1, 149 => 0,
 		150 => 1, 151 => 0, 152 => 1, 153 => 0, 154 => 1, 155 => 0, 156 => 1, 157 => 0, 158 => 1, 159 => 0,
+		160 => 1, 161 => 0,
 		200 => 0, 201 => 0);
 
 $wgContentNamespaces = array(
@@ -104,6 +108,7 @@ $wgContentNamespaces = array(
 		120, 122, 124, 126, 128, 
 		130, 132, 134, 136, 138,
 		140, 142, 144, 146, 148,
-		150, 152, 154, 156, 158);
+		150, 152, 154, 156, 158,
+		160);
 
 $wgExtraSignatureNamespaces[] = NS_PROJECT;
