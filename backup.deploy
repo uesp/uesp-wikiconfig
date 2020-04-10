@@ -12,10 +12,4 @@ ignore = *.deploy
 ignore = .hg*
 ignore = .git*
 
-dest = content1.uesp.net:/home/uesp/www/w/config/
-dest = content2.uesp.net:/home/uesp/www/w/config/
-dest = content3.uesp.net:/home/uesp/www/w/config/
-
-rundeployfiles = false
-deployfile = dev:dev.deploy
-deployfile = backup:backup.deploy
+dest = backup1.uesp.net:/home/uesp/www/w/config/
