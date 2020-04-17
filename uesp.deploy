@@ -1,11 +1,10 @@
 name = uesp.wikiconfig
 description = Config files for the UESP.net wiki
-repository =
+repository = https://github.com/uesp/uesp-wikiconfig
 backup = true
 verbosity = 0
 
-	# Staging is important as the APC cache randomly breaks if you try
-	# to update the files in place.
+	# Staging is important as the APC cache randomly breaks if you try to update the files in place.
 staged = true
 
 ignore = *.deploy
@@ -16,6 +15,5 @@ dest = content1.uesp.net:/home/uesp/www/w/config/
 dest = content2.uesp.net:/home/uesp/www/w/config/
 dest = content3.uesp.net:/home/uesp/www/w/config/
 
-rundeployfiles = false
-deployfile = dev:dev.deploy
-deployfile = backup:backup.deploy
+destname = [backup]backup1.uesp.net:/home/uesp/www/w/config/
+destname = [dev]content3.uesp.net:/home/uesp/dev/www/w/config/

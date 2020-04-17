@@ -117,3 +117,5 @@ require_once( "$IP/extensions/Tabs/Tabs.php" );
 wfLoadExtension( "PageSpeedLog" );
 wfLoadExtension( "UespPatreon" );
 wfLoadExtension( "SyntaxHighlight_GeSHi" );
+wfLoadExtension( "UespShortLinks" );
+
