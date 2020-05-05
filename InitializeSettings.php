@@ -5,9 +5,18 @@
 # configuration to determine which site is being viewed. 
 #
 
-# dev.uesp.net
+# dev.uesp.net host detection
 $uespIsDev = false;
 if ($_SERVER['HTTP_HOST'] == "dev.uesp.net" || $_SERVER['HTTP_HOST'] == "dev.m.uesp.net") $uespIsDev = true;
+
+# backup1.uesp.net command line host detection
+$uespIsBackup1 = false;
+
+if (php_sapi_name() == "cli" && gethostname() == "backup1.uesp.net") 
+{
+	$uespIsBackup1 = true;
+	fwrite(STDERR, "\tAuto-detected UESP backup1 wiki!\n");	
+}
 
 # Mobile sites
 $uespIsMobile = false;
@@ -142,7 +151,7 @@ if (php_sapi_name() == "cli") {
 		$lang = $uespArgs["uesplang"];
 		if ($lang == null || $lang == "") $lang = "en";
 		
-		print("\tUsing custom UESP language code '$lang'!\n");
+		fwrite(STDERR, "\tUsing custom UESP language code '$lang'!\n");
 		
 		$wgLanguageCode = $lang;
 		
@@ -158,6 +167,12 @@ if (php_sapi_name() == "cli") {
 	{
 		$wgServer = "https://dev.uesp.net";
 		$uespIsDev = true;
-		print("\tForcing UESP dev wiki!\n");
+		fwrite(STDERR, "\tForcing UESP dev wiki!\n");
+	}
+	
+	if ($uespArgs["uespbackup"])
+	{
+		$uespIsBackup1 = true;
+		fwrite(STDERR, "\tForcing UESP backup1 wiki!\n");
 	}
 }

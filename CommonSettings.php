@@ -8,6 +8,9 @@
 
 $wgSitename = "UESPWiki";
 
+$wgEnableCanonicalServerLink = true;
+$wgCanonicalServer = "https://$wgLanguageCode.uesp.net";
+
 $wgScriptPath       = "/w";
 $wgScriptExtension  = ".php";
 $wgStylePath = "$wgScriptPath/skins";
