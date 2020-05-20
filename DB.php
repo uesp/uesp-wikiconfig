@@ -62,7 +62,7 @@ else
 				'password' => $uespWikiPW,
 				'type' => "mysql",
 				'flag' => DBO_DEFAULT,
-				'load' => 1,
+				'load' => 10,
 		);
 		
 }
@@ -70,6 +70,7 @@ else
 /* Always use backup1 as the primary read DB on backup1 scripts */
 if ($uespIsBackup1)
 {
+	$wgDBservers[0]['load'] = 0;
 	$wgDBservers[1] = $uespBackup1Db;
 }
 
