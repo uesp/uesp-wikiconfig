@@ -76,12 +76,14 @@ if ($uespIsBackup1)
 
 
 # Special settings for translation wikis
+$wgSharedDB = $uespWikiDB;
+$wgSharedPrefix = '';
+$wgSharedTables[] = 'ipblocks';
+$wgSharedTables[] = 'interwiki';
+
 if ($uespLanguageSuffix != "")
 {
-	$wgSharedDB = $uespWikiDB;
-	$wgSharedPrefix = '';
-	$wgSharedTables[] = 'ipblocks';
-	$wgSharedTables[] = 'interwiki';
+	$wgLocalDatabases[] = $uespWikiDB;
 }
 
 # $wgMasterWaitTimeout = 6000;

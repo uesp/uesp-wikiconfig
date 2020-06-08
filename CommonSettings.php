@@ -87,7 +87,12 @@ $wgRightsPage = "UESPWiki:Copyright_and_Ownership";
 $wgRightsUrl = "http://creativecommons.org/licenses/by-sa/2.5/";
 $wgRightsText = "Attribution-ShareAlike 2.5 License";
 $wgRightsIcon = "//images.uesp.net/4/4d/Somerights.png";
-$wgCopyrightIcon = "<a href=\"//en.uesp.net/wiki/UESPWiki:Copyright_and_Ownership\"><img src=\"//en.uesp.net/w/images/4/4d/Somerights.png\" style=\"border: none;\" alt=\"[Content is available under Attribution-ShareAlike]\" /></a>";
+//$wgCopyrightIcon = "<a href=\"//en.uesp.net/wiki/UESPWiki:Copyright_and_Ownership\"><img src=\"//en.uesp.net/w/images/4/4d/Somerights.png\" style=\"border: none;\" alt=\"[Content is available under Attribution-ShareAlike]\" /></a>";
+$wgFooterIcons['copyright']['copyright'] = array(
+		"src" => "//en.uesp.net/w/images/4/4d/Somerights.png",
+		"url" => "//en.uesp.net/wiki/UESPWiki:Copyright_and_Ownership",
+		"alt" => "[Content is available under Attribution-ShareAlike]"
+);
 
 $wgDiff3 = "/usr/bin/diff3";
 $wgExternalDiffEngine = "wikidiff2";
