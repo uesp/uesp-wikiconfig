@@ -5,6 +5,8 @@
 # It is included by LocalSettings.php.
 #
 
+require(__DIR__  . "/../extensions/MobileFrontend/includes/MobileContext.php");
+
 	# Force a mobile site display 
 if ($uespIsMobile)
 {
