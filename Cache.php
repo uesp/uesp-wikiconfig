@@ -13,6 +13,7 @@ $wgMemCachedServers = array($UESP_SERVER_MEMCACHED . ":11000");
 if ($uespIsDev)
 {
 	$wgCacheDirectory = "/home/uesp/cache/dev";
+	$wgMemCachedServers = array($UESP_SERVER_BACKUP1 . ":11000");
 }
 else
 {
