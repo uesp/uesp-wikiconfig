@@ -5,6 +5,11 @@
 # It is included by LocalSettings.php.
 #
 
+# Remove redundant checkuser group (all admins have equivalent rights)
+$wgExtensionFunctions[] = function() use ( &$wgGroupPermissions ) {
+    unset( $wgGroupPermissions['checkuser'] );
+};
+
 # Rights to add or remove user groups
 $wgAddGroups   ['sysop'] = array ( 'abuseeditor', 'autopatrolled', 'blockuser', 'cartographer', 'confirmed', 'map', 'patroller', 'translator', 'userpatroller', 'esocartographer' );
 $wgRemoveGroups['sysop'] = array ( 'abuseeditor', 'autopatrolled', 'blockuser', 'cartographer', 'confirmed', 'map', 'patroller', 'translator', 'userpatroller', 'esocartographer' );
