@@ -81,7 +81,7 @@ $wgDefaultSkin = 'uespmonobook';
 $wgDefaultUserOptions['thumbsize'] = 3; // thumb size 200
 $wgGalleryOptions['imageWidth'] = 200;
 $wgGalleryOptions['imageHeight'] = 200;
-// $wgGalleryOptions['mode'] = 'nolines';
+$wgGalleryOptions['mode'] = 'packed';
 
 $wgRightsPage = "UESPWiki:Copyright_and_Ownership";
 $wgRightsUrl = "http://creativecommons.org/licenses/by-sa/2.5/";
