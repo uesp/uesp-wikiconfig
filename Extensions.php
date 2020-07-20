@@ -116,6 +116,7 @@ require_once( "$IP/extensions/Tabs/Tabs.php" );
 
 wfLoadExtension( "PageSpeedLog" );
 wfLoadExtension( "UespPatreon" );
+$wgSharedTables[] = 'patreon_user';	//Should be in extension but is not working
 wfLoadExtension( "SyntaxHighlight_GeSHi" );
 wfLoadExtension( "UespShortLinks" );
 
