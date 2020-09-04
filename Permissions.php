@@ -43,6 +43,7 @@ $wgGroupPermissions['autopatrolled']['tboverride'] = true;
 $wgGroupPermissions['blockuser']['blocktalk'] = true;
 $wgGroupPermissions['blockuser']['skipcaptcha'] = true;
 
+$wgGroupPermissions['bot']['deletedhistory'] = true;
 $wgGroupPermissions['bot']['editprotected'] = true;
 $wgGroupPermissions['bot']['protect'] = true;
 $wgGroupPermissions['bot']['tboverride'] = true;
