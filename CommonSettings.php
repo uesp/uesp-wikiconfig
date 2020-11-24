@@ -107,6 +107,7 @@ $wgAutoConfirmCount = 10;
 $wgBlockAllowsUTEdit = true;
 $wgCookieDomain = ".uesp.net";
 $wgCookiePrefix = "uesp_net_wiki5"; # Don't change as it affects the session name used
+$wgObjectCacheSessionExpiry = 7*3600;
 $wgDisableCounters = true;
 $wgShowIPinHeader = false;
 $wgExpensiveParserFunctionLimit = 1000;

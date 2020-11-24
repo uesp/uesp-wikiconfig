@@ -10,3 +10,5 @@ require_once( "$IP/extensions/CirrusSearch/CirrusSearch.php" );
 $wgDisableSearchUpdate = false;
 $wgCirrusSearchServers = array( $UESP_SERVER_SEARCH );
 $wgSearchType = 'CirrusSearch';
+
+$wgCirrusSearchUseExperimentalHighlighter = true;
