@@ -97,7 +97,7 @@ $wgFooterIcons['copyright']['copyright'] = array(
 $wgDiff3 = "/usr/bin/diff3";
 $wgExternalDiffEngine = "wikidiff2";
 
-$wgAccountCreationThrottle = 1;
+$wgAccountCreationThrottle = 2; // Workaround for possible 1.27 issue; can be reset to 1 for 1.28+.
 $wgAjaxSearch = true;
 $wgAllowUserCss = true;
 $wgAllowUserJs  = true;
