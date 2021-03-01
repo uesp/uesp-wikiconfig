@@ -104,6 +104,15 @@ $wgUseInstantCommons = true;
 require_once( "$IP/extensions/UploadWizard/UploadWizard.php" );
 	//Override?
 $wgUploadWizardConfig['uwLanguages'] = array( 'en' => 'English' );
+$wgUploadWizardConfig['enableCategoryCheck'] = false;
+$wgUploadWizardConfig['minAuthorLength'] = 0;
+$wgUploadWizardConfig['minSourceLength'] = 0;
+$wgUploadWizardConfig['minDescriptionLength'] = 0;
+$wgUploadWizardConfig['defaults']['description'] = 'Uploaded by UploadWizard';
+unset($wgUploadWizardConfig['licensing']['ownWork']['template']);
+$wgUploadWizardConfig['licensing']['ownWork']['defaults'] = 'cc-by-sa-2.5';
+$wgUploadWizardConfig['licensing']['ownWork']['licenses'] = array('cc-by-sa-2.5', 'cc-by-2.5', 'pd-us', 'none');
+$wgUploadWizardConfig['licensing']['thirdParty']['defaults'] = 'cc-by-sa-2.5';
 
 # wfLoadExtension( 'DisableAccount' );
 # $wgGroupPermissions['bureaucrat']['disableaccount'] = true;
