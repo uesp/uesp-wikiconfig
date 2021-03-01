@@ -11,4 +11,5 @@ $wgDisableSearchUpdate = false;
 $wgCirrusSearchServers = array( $UESP_SERVER_SEARCH );
 $wgSearchType = 'CirrusSearch';
 
-$wgCirrusSearchUseExperimentalHighlighter = true;
+# Can't enable this until plguin installed on the Elastica server
+# $wgCirrusSearchUseExperimentalHighlighter = true;

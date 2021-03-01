@@ -98,8 +98,12 @@ require_once( "$IP/extensions/Graph/Graph.php" );
 $wgEnableGraphParserTag = true;
 
 require_once( "$IP/extensions/RecentPopularPages/RecentPopularPages.php");
-
 require_once( "$IP/extensions/Tabs/Tabs.php" );
+
+$wgUseInstantCommons = true;
+require_once( "$IP/extensions/UploadWizard/UploadWizard.php" );
+	//Override?
+$wgUploadWizardConfig['uwLanguages'] = array( 'en' => 'English' );
 
 # wfLoadExtension( 'DisableAccount' );
 # $wgGroupPermissions['bureaucrat']['disableaccount'] = true;
