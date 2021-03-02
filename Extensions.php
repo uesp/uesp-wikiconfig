@@ -100,19 +100,165 @@ $wgEnableGraphParserTag = true;
 require_once( "$IP/extensions/RecentPopularPages/RecentPopularPages.php");
 require_once( "$IP/extensions/Tabs/Tabs.php" );
 
-$wgUseInstantCommons = true;
+$wgUseInstantCommons = true;	//Needed for the tutorial image to show up
 require_once( "$IP/extensions/UploadWizard/UploadWizard.php" );
-	//Override?
+
+$wgMessagesDirs['UploadWizard'] = array(
+		"$IP/extensions/UploadWizard/i18n",
+		"$IP/extensions/UespCustomCode/uploadWizard-i18n"
+); 
 $wgUploadWizardConfig['uwLanguages'] = array( 'en' => 'English' );
 $wgUploadWizardConfig['enableCategoryCheck'] = false;
 $wgUploadWizardConfig['minAuthorLength'] = 0;
 $wgUploadWizardConfig['minSourceLength'] = 0;
 $wgUploadWizardConfig['minDescriptionLength'] = 0;
 $wgUploadWizardConfig['defaults']['description'] = 'Uploaded by UploadWizard';
-unset($wgUploadWizardConfig['licensing']['ownWork']['template']);
-$wgUploadWizardConfig['licensing']['ownWork']['defaults'] = 'cc-by-sa-2.5';
-$wgUploadWizardConfig['licensing']['ownWork']['licenses'] = array('cc-by-sa-2.5', 'cc-by-2.5', 'pd-us', 'none');
-$wgUploadWizardConfig['licensing']['thirdParty']['defaults'] = 'cc-by-sa-2.5';
+//unset($wgUploadWizardConfig['licensing']['ownWork']['template']);
+$wgUploadWizardConfig['licensing']['ownWork']['defaults'] = 'uesp-cc-by-sa-2.5';
+$wgUploadWizardConfig['licensing']['thirdParty']['defaults'] = 'uesp-cc-by-sa-2.5';
+
+$wgUploadWizardConfig['licensing']['ownWork']['licenses'] = array(
+		'uesp-cc-by-sa-2.5', 
+		'uesp-cc-by-2.5',
+		'uesp-cc-by-sa-nc-2.5',
+		//'uesp-gfdl',
+		//'uesp-none',
+		//'uesp-dontknow',
+		'uesp-pd',
+		//'uesp-esimage-direwolf',
+		//'uesp-esimage-modipihius',
+		//'uesp-esimage',
+		//'uesp-zenimage',
+		'uesp-usedwithpermission',
+		//'uesp-uespimage',
+		//'uesp-uespimage-zos',
+);
+
+$wgUploadWizardConfig['licensing']['thirdParty']['licenseGroups'] = array(
+		array(
+				'head' => 'mwe-upwiz-license-none-head',
+				'licenses' => array(
+						'uesp-none',
+						'uesp-dontknow',
+				)
+		),
+		array(
+				'head' => 'mwe-upwiz-license-publicdomain-head',
+				'licenses' => array(
+						'uesp-pd',
+				)
+		),
+		array(
+				'head' => 'mwe-upwiz-license-cc-head',
+				'licenses' => array(
+						'uesp-cc-by-sa-2.5', 
+						'uesp-cc-by-2.5',
+						'uesp-cc-by-sa-nc-2.5',
+						'uesp-gfdl',
+				)
+		),
+		array(
+				'head' => 'mwe-upwiz-license-nonfree-head',
+				'licenses' => array(
+						'uesp-esimage-direwolf',
+						'uesp-esimage-modipihius',
+						'uesp-esimage',
+						'uesp-zenimage',
+						'uesp-usedwithpermission',
+				)
+		),
+		array(
+				'head' => 'mwe-upwiz-license-screenshots-head',
+				'licenses' => array(
+						'uesp-uespimage',
+						'uesp-uespimage-zos',
+				)
+		),
+);
+
+$wgUploadWizardConfig['licenses']['uesp-none'] = array(
+		'msg' => 'mwe-upwiz-license-uesp-none',
+		'templates' => array( 'nolicense' ),
+);
+$wgUploadWizardConfig['licenses']['uesp-dontknow'] = array(
+		'msg' => 'mwe-upwiz-license-uesp-dontknow',
+		'templates' => array( 'nolicense' ),
+);
+$wgUploadWizardConfig['licenses']['uesp-pd'] = array(
+		'msg' => 'mwe-upwiz-license-uesp-pd',
+		'templates' => array( 'publicdomain' ),
+		'icons' => array( 'cc-zero' )
+);
+$wgUploadWizardConfig['licenses']['uesp-cc-by-sa-2.5'] = array(
+		'msg' => 'mwe-upwiz-license-uesp-cc-by-sa-2.5',
+		'templates' => array( 'cc-by-sa-2.5' ),
+		'icons' => array( 'cc-by', 'cc-sa' )
+);
+$wgUploadWizardConfig['licenses']['uesp-cc-by-2.5'] = array(
+		'msg' => 'mwe-upwiz-license-uesp-cc-by-2.5',
+		'templates' => array( 'cc-by-2.5' ),
+		'icons' => array( 'cc-by' )
+);
+$wgUploadWizardConfig['licenses']['uesp-cc-by-sa-nc-2.5'] = array(
+		'msg' => 'mwe-upwiz-license-uesp-cc-by-sa-nc-2.5',
+		'templates' => array( 'cc-by-sa-nc-2.5' ),
+		'icons' => array( 'cc-by', 'cc-sa' )
+);
+$wgUploadWizardConfig['licenses']['uesp-gfdl'] = array(
+		'msg' => 'mwe-upwiz-license-uesp-gfdl',
+		'templates' => array( 'GFDL' ),
+);
+$wgUploadWizardConfig['licenses']['uesp-esimage-direwolf'] = array(
+		'msg' => 'mwe-upwiz-license-uesp-esimage-direwolf',
+		'templates' => array( 'esimage|Dire Wolf Digital' ),
+);
+$wgUploadWizardConfig['licenses']['uesp-esimage-modipihius'] = array(
+		'msg' => 'mwe-upwiz-license-uesp-esimage-modipihius',
+		'templates' => array( 'esimage|Modipihius Entertainment' ),
+);
+$wgUploadWizardConfig['licenses']['uesp-esimage'] = array(
+		'msg' => 'mwe-upwiz-license-uesp-esimage',
+		'templates' => array( 'esimage' ),
+);
+$wgUploadWizardConfig['licenses']['uesp-zenimage'] = array(
+		'msg' => 'mwe-upwiz-license-uesp-zenimage',
+		'templates' => array( 'zenimage' ),
+);
+$wgUploadWizardConfig['licenses']['uesp-usedwithpermission'] = array(
+		'msg' => 'mwe-upwiz-license-uesp-usedwithpermission',
+		'templates' => array( 'usedwithpermission' ),
+);
+$wgUploadWizardConfig['licenses']['uesp-uespimage'] = array(
+		'msg' => 'mwe-upwiz-license-uesp-uespimage',
+		'templates' => array( 'uespimage' ),
+);
+$wgUploadWizardConfig['licenses']['uesp-uespimage-zos'] = array(
+		'msg' => 'mwe-upwiz-license-uesp-uespimage-zos',
+		'templates' => array( 'uespimage|Zenimax Online Studios' ),
+);
+
+$wgResourceModules['ext.uploadWizard']['messages'] = array_merge($wgResourceModules['ext.uploadWizard']['messages'], array(
+		"mwe-upwiz-source-ownwork-assert-uesp-cc-by-sa-2.5",
+		"mwe-upwiz-source-ownwork-uesp-cc-by-sa-2.5-explain",
+		"mwe-upwiz-license-uesp-cc-by-sa-2.5",
+		"mwe-upwiz-license-uesp-cc-by-2.5",
+		"mwe-upwiz-license-uesp-cc-by-sa-nc-2.5",
+		"mwe-upwiz-license-uesp-pd",
+		"mwe-upwiz-license-uesp-usedwithpermission",
+		"mwe-upwiz-license-uesp-gfdl",
+		"mwe-upwiz-license-uesp-none",
+		"mwe-upwiz-license-uesp-dontknow",
+		"mwe-upwiz-license-uesp-esimage-direwolf",
+		"mwe-upwiz-license-uesp-esimage-modipihius",
+		"mwe-upwiz-license-uesp-esimage",
+		"mwe-upwiz-license-uesp-zenimage",
+		"mwe-upwiz-license-uesp-uespimage",
+		"mwe-upwiz-license-uesp-uespimage-zos",
+		"mwe-upwiz-license-publicdomain-head",
+		"mwe-upwiz-license-nonfree-head",
+		"mwe-upwiz-license-screenshots-head",
+));
+
 
 # wfLoadExtension( 'DisableAccount' );
 # $wgGroupPermissions['bureaucrat']['disableaccount'] = true;
