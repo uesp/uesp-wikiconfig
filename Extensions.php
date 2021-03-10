@@ -100,7 +100,6 @@ $wgEnableGraphParserTag = true;
 require_once( "$IP/extensions/RecentPopularPages/RecentPopularPages.php");
 require_once( "$IP/extensions/Tabs/Tabs.php" );
 
-$wgUseInstantCommons = true;	//Needed for the tutorial image to show up
 require_once( "$IP/extensions/UploadWizard/UploadWizard.php" );
 
 $wgMessagesDirs['UploadWizard'] = array(
