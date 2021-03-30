@@ -42,7 +42,7 @@ $wgSVGConverters['ImageMagick'] = '$path/convert -background "#ffffff00" -thumbn
 # $wgSVGConverters['ImageMagick'] = $wgImageMagickConvertCommand . ' -background "#ffffff00" -thumbnail $widthx$height\! $input PNG:$output';
 
 $wgHashedUploadDirectory = true;
-array_push($wgFileExtensions, 'ogg', 'zip', 'bmp', 'pcx', 'tga', 'svg', 'webm', 'webp');
+array_push($wgFileExtensions, 'ogg', 'zip', 'bmp', 'pcx', 'tga', 'apng', 'svg', 'webm', 'webp');
 $wgThumbnailEpoch = '20090624000000';
 $wgUseSharedUploads = false;
 
