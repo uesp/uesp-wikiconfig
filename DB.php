@@ -41,6 +41,7 @@ else
 				'flag' => DBO_DEFAULT,
 				'load' => 1,
 		),
+/* Down for upgrade
 		array(          # db2 - Primary Read
 				'host' => $UESP_SERVER_DB2,
 				'dbname' => $uespWikiDBName,
@@ -50,8 +51,8 @@ else
 				'flag' => DBO_DEFAULT,
 				'load' => 10,
 				'max lag' => 1000,
-		)
-	);
+		) */
+	); 
 	
 			/* Don't include by default as backup lag can affect production servers */
 	$uespBackup1Db = 
