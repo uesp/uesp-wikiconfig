@@ -18,6 +18,7 @@ $wgRemoveGroups['sysop'] = array ( 'abuseeditor', 'autopatrolled', 'blockuser', 
 $wgGroupPermissions['*']['createpage'] = false;
 $wgGroupPermissions['*']['mapedit'] = false;
 $wgGroupPermissions['*']['esomapedit'] = false;
+$wgGroupPermissions['*']['trmapedit'] = false;
 $wgGroupPermissions['*']['patroller'] = false;
 
 $wgGroupPermissions['user']['move'] = false;
@@ -51,10 +52,22 @@ $wgGroupPermissions['bot']['tboverride'] = true;
 $wgGroupPermissions['cartographer']['map'] = true;
 $wgGroupPermissions['cartographer']['mapedit'] = true;
 $wgGroupPermissions['cartographer']['esomapedit'] = true;
+$wgGroupPermissions['cartographer']['trmapedit'] = true;
 
 $wgGroupPermissions['esocartographer']['map'] = true;
 $wgGroupPermissions['esocartographer']['mapedit'] = false;
 $wgGroupPermissions['esocartographer']['esomapedit'] = true;
+$wgGroupPermissions['esocartographer']['trmapedit'] = false;
+
+$wgGroupPermissions['trcartographer']['map'] = true;
+$wgGroupPermissions['trcartographer']['mapedit'] = false;
+$wgGroupPermissions['trcartographer']['esomapedit'] = false;
+$wgGroupPermissions['trcartographer']['trmapedit'] = true;
+
+$wgGroupPermissions['othercartographer']['map'] = true;
+$wgGroupPermissions['othercartographer']['mapedit'] = true;
+$wgGroupPermissions['othercartographer']['esomapedit'] = false;
+$wgGroupPermissions['othercartographer']['trmapedit'] = false;
 
 $wgGroupPermissions['confirmed']['autoconfirmed'] = true;
 
