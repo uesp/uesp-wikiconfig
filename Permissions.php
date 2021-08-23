@@ -117,6 +117,10 @@ $wgGroupPermissions['translator']['undelete'] = true;
 
 $wgGroupPermissions['userpatroller']['tboverride'] = true;
 
+# Temporary elevation of reupload rights
+$wgGroupPermissions['user']['reupload'] = false;
+$wgGroupPermissions['autoconfirmed']['reupload'] = true;
+
 # Right to create an account via the API (completely disabled for all users)
 $wgAPIModules['createaccount'] = 'ApiDisabled';
 
