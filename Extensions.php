@@ -56,6 +56,7 @@ require_once( "$IP/extensions/MetaTemplate/MetaTemplate.php" );
 require_once( "$IP/extensions/MobileFrontend/MobileFrontend.php" );
 $wgMobileFrontendLogo = $wgScriptPath . '/extensions/MobileFrontend/stylesheets/images/uesp-mobile-logo.png';
 $wgMFAutodetectMobileView = true;
+$wgMFContentNamespace = "NS_MAIN|102|104|106|108|110|112|114|116|118|120|122|124|126|128|130|132|134|136|138|140|142|144|146|148|150|152|154|156|158|160|162|164|166|168|170|172|174|176|178";
 
 wfLoadExtension( "ParserFunctions" );
 $wgPFEnableStringFunctions = true;

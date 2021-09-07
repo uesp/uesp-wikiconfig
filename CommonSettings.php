@@ -156,3 +156,4 @@ if ($uespIsDev)
 {
 	$wgUploadPath = "//dev.uesp.net/w/images";
 }
+
