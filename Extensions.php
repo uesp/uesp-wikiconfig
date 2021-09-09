@@ -282,3 +282,4 @@ wfLoadExtension( "UespShortLinks" );
 require_once( "$IP/extensions/NativeSvgHandler/NativeSvgHandler.php" );
 $wgNativeSvgHandlerEnableLinks = true;
 
+wfLoadExtension( "UespGameMap" );
