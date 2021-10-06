@@ -283,3 +283,13 @@ require_once( "$IP/extensions/NativeSvgHandler/NativeSvgHandler.php" );
 $wgNativeSvgHandlerEnableLinks = true;
 
 wfLoadExtension( "UespGameMap" );
+
+require_once "$IP/extensions/PageImages/PageImages.php";
+$wgPageImagesNamespaces = [NS_MAIN, 102, 104, 106, 108,
+		110, 112, 114, 116, 118,
+		120, 122, 124, 126, 128, 
+		130, 132, 134, 136, 138,
+		140, 142, 144, 146, 148,
+		150, 152, 154, 156, 158,
+		160, 162, 164, 166, 168,
+		170, 172, 174, 176, 178];
