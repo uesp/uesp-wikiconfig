@@ -5,6 +5,88 @@
 # It is included by LocalSettings.php.
 #
 
+#
+# Keep this array updated as extensions are added or removed. It is currently only used when
+# upgrading MediaWiki in order to automatically upgrade extensions as needed.
+#
+#   EXTENSION_DIRECTORY => VALUE,
+#
+$UESP_EXT_DEFAULT = 0;		// Included with the MW extension
+$UESP_EXT_UPGRADE = 1;		// Upgrade with the uesp-getmwext script
+$UESP_EXT_OTHER = 2;		// Needs a manual upgrade
+$UESP_EXT_NONE = 3;			// Doesn't need an upgrade
+
+$UESP_EXTENSION_INFO = [
+	"AbuseFilter" => $UESP_EXT_UPGRADE,
+	"AntiSpoof" => $UESP_EXT_UPGRADE,
+	"CharInsert" => $UESP_EXT_UPGRADE,
+	"CheckUser" => $UESP_EXT_UPGRADE,
+	"CirrusSearch" => $UESP_EXT_UPGRADE,
+	"Cite" => $UESP_EXT_DEFAULT,
+	"CiteThisPage" => $UESP_EXT_DEFAULT,
+	"ConfirmEdit" => $UESP_EXT_DEFAULT,
+	"DaedricFont" => $UESP_EXT_NONE,
+	"DailyEdits" => $UESP_EXT_NONE,
+	"DeleteBatch" => $UESP_EXT_UPGRADE,
+	"DisableAccount" => $UESP_EXT_UPGRADE,
+	"Disambiguator" => $UESP_EXT_UPGRADE,
+	"DismissableSiteNotice" => $UESP_EXT_UPGRADE,
+	"DragonFont" => $UESP_EXT_NONE,
+	"DwemerFont" => $UESP_EXT_NONE,
+	"Editcount" => $UESP_EXT_NONE,
+	"Elastica" => $UESP_EXT_UPGRADE,
+	"EsoCharData" => $UESP_EXT_NONE,
+	"FalmerFont" => $UESP_EXT_NONE,
+	"Gadgets" => $UESP_EXT_DEFAULT,
+	"Graph" => $UESP_EXT_UPGRADE,
+	"ImageMap" => $UESP_EXT_DEFAULT,
+	"InputBox" => $UESP_EXT_DEFAULT,
+	"Interwiki" => $UESP_EXT_DEFAULT,
+	"JobQueue" => $UESP_EXT_NONE,
+	"JsonConfig" => $UESP_EXT_UPGRADE,
+	"LabeledSectionTransclusion" => $UESP_EXT_UPGRADE,
+	"LocalisationUpdate" => $UESP_EXT_DEFAULT,
+	"LogPageRenderTimes" => $UESP_EXT_NONE,
+	"MediaFunctions" => $UESP_EXT_UPGRADE,
+	"MetaTemplate" => $UESP_EXT_NONE,
+	"MobileFrontend" => $UESP_EXT_UPGRADE,
+	"MwEmbedSupport" => $UESP_EXT_OTHER,
+	"NativeSvgHandler" => $UESP_EXT_NONE,		// Doesn't have versions available before 1.35
+	"Nuke" => $UESP_EXT_DEFAULT,
+	"PageImages" => $UESP_EXT_UPGRADE,
+	"PageSpeedLog" => $UESP_EXT_NONE,
+	"ParserFunctions" => $UESP_EXT_DEFAULT,
+	"Patroller" => $UESP_EXT_UPGRADE,
+	"PdfHandler" => $UESP_EXT_DEFAULT,
+	"Poem" => $UESP_EXT_DEFAULT,
+	"ProtectSection" => $UESP_EXT_NONE,
+	"RecentPopularPages" => $UESP_EXT_NONE,
+	"RegexFunctions" => $UESP_EXT_UPGRADE,
+	"Renameuser" => $UESP_EXT_DEFAULT,
+	"SearchLog" => $UESP_EXT_NONE,
+	"SpamBlacklist" => $UESP_EXT_DEFAULT,
+	"SyntaxHighlight_GeSHi" => $UESP_EXT_DEFAULT,
+	"Tabs" => $UESP_EXT_UPGRADE,
+	"TimedMediaHandler" => $UESP_EXT_UPGRADE,
+	"TitleBlacklist" => $UESP_EXT_DEFAULT,
+	"TorBlock" => $UESP_EXT_UPGRADE,
+	"UespCustomCode" => $UESP_EXT_NONE,
+	"UespCustomNew" => $UESP_EXT_NONE,
+	"UespEsoItemLink" => $UESP_EXT_NONE,
+	"UespEsoSkills" => $UESP_EXT_NONE,
+	"UespGameMap" => $UESP_EXT_NONE,
+	"UespLegendsCards" => $UESP_EXT_NONE,
+	"UespMap" => $UESP_EXT_NONE,
+	"UespPatreon" => $UESP_EXT_NONE,
+	"UespShortLinks" => $UESP_EXT_NONE,
+	"UploadWizard" => $UESP_EXT_UPGRADE,
+	"UsersEditCount" => $UESP_EXT_NONE,
+	"WikiEditor" => $UESP_EXT_DEFAULT,
+	"WikiTextLoggedInOut" => $UESP_EXT_UPGRADE,
+];
+
+if ($UESP_UPGRADING_MW == 1) return;
+
 require_once( "$IP/extensions/AbuseFilter/AbuseFilter.php" );
 $wgAbuseFilterEmergencyDisableThreshold['default'] = 0.5;
 
@@ -78,7 +160,7 @@ $wgGroupPermissions['user']['torunblocked'] = false;
 require_once( "$IP/extensions/UespCustomCode/SiteCustomCode.php" );
 require_once( "$IP/extensions/UespMap/UespMap.php" );
 require_once( "$IP/extensions/UsersEditCount/UsersEditCount.php" );
-require_once( "$IP/extensions/WikiTextLoggedInOut/WikiTextLoggedInOut.php" );
+wfLoadExtension ( "WikiTextLoggedInOut" );
 wfLoadSkin( "UespMonoBook" );
 wfLoadSkin( "UespVector" );
 require_once( "$IP/extensions/EsoCharData/EsoCharData.php" );
