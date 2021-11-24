@@ -320,7 +320,7 @@ $wgUploadWizardConfig['licenses']['uesp-uespimage-zos'] = array(
 		'templates' => array( 'uespimage|Zenimax Online Studios' ),
 );
 
-$wgResourceModules['ext.uploadWizard']['messages'] = array_merge($wgResourceModules['ext.uploadWizard']['messages'], array(
+$wgResourceModules['ext.uploadWizardUesp']['messages'] = array(
 		"mwe-upwiz-source-ownwork-assert-uesp-cc-by-sa-2.5",
 		"mwe-upwiz-source-ownwork-uesp-cc-by-sa-2.5-explain",
 		"mwe-upwiz-license-uesp-cc-by-sa-2.5",
@@ -340,7 +340,15 @@ $wgResourceModules['ext.uploadWizard']['messages'] = array_merge($wgResourceModu
 		"mwe-upwiz-license-publicdomain-head",
 		"mwe-upwiz-license-nonfree-head",
 		"mwe-upwiz-license-screenshots-head",
-));
+);
+
+	/* TODO: Only need to load for the Special:UploadWizard page */
+$wgHooks['BeforePageDisplay'][] = 'UESPUploadWizard_beforePageDisplay';
+
+function UESPUploadWizard_beforePageDisplay($out, $skin)
+{
+	$out->addModules( 'ext.uploadWizardUesp' );
+}
 
 
 # wfLoadExtension( 'DisableAccount' );
