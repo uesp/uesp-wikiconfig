@@ -14,3 +14,5 @@ $wgSearchType = 'CirrusSearch';
 # Can't enable this until plguin installed on the Elastica server
 $wgCirrusSearchUseExperimentalHighlighter = true;
 $wgCirrusSearchOptimizeIndexForExperimentalHighlighter = true;
+
+$wgDebugLogGroups['CirrusSearch'] = "/var/log/httpd/cirrussearch.log";
