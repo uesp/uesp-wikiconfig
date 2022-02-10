@@ -10,3 +10,4 @@
 # $wgUseSquid = false;
 # $wgShowSQLErrors = true;
 # $wgShowExceptionDetails = true;
+# $wgDevelopmentWarnings = true;

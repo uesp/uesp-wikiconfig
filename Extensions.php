@@ -362,7 +362,12 @@ function UESPUploadWizard_beforePageDisplay($out, $skin)
 # RM: Things to consider adding
 # wfLoadExtension( "Interwiki" );
 # wfLoadExtension( "Nuke" );
-# wfLoadExtension( "WikiEditor" );
+
+wfLoadExtension( "WikiEditor" );
+$wgDefaultUserOptions['usebetatoolbar'] = 1;
+$wgDefaultUserOptions['usebetatoolbar-cgd'] = 1;
+$wgDefaultUserOptions['wikieditor-preview'] = 1;
+$wgDefaultUserOptions['wikieditor-publish'] = 1;
 
 wfLoadExtension( "PageSpeedLog" );
 wfLoadExtension( "UespPatreon" );

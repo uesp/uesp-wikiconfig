@@ -8,7 +8,7 @@
 wfLoadExtension( "Elastica" );
 require_once( "$IP/extensions/CirrusSearch/CirrusSearch.php" );
 $wgDisableSearchUpdate = false;
-$wgCirrusSearchServers = array( "content2.uesp.net" );
+$wgCirrusSearchServers = array( $UESP_SERVER_SEARCH );
 $wgSearchType = 'CirrusSearch';
 
 # Can't enable this until plguin installed on the Elastica server
