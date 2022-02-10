@@ -364,10 +364,10 @@ function UESPUploadWizard_beforePageDisplay($out, $skin)
 # wfLoadExtension( "Nuke" );
 
 wfLoadExtension( "WikiEditor" );
-$wgDefaultUserOptions['usebetatoolbar'] = 1;
-$wgDefaultUserOptions['usebetatoolbar-cgd'] = 1;
-$wgDefaultUserOptions['wikieditor-preview'] = 1;
-$wgDefaultUserOptions['wikieditor-publish'] = 1;
+$wgDefaultUserOptions['usebetatoolbar'] = 0;
+$wgDefaultUserOptions['usebetatoolbar-cgd'] = 0;
+$wgDefaultUserOptions['wikieditor-preview'] = 0;
+$wgDefaultUserOptions['wikieditor-publish'] = 0;
 
 wfLoadExtension( "PageSpeedLog" );
 wfLoadExtension( "UespPatreon" );
