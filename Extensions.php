@@ -63,6 +63,7 @@ $UESP_EXTENSION_INFO = [
 	"RecentPopularPages" => $UESP_EXT_NONE,
 	"RegexFunctions" => $UESP_EXT_UPGRADE,
 	"Renameuser" => $UESP_EXT_DEFAULT,
+	"Scribunto" => $UESP_EXT_UPGRADE,
 	"SearchLog" => $UESP_EXT_NONE,
 	"SpamBlacklist" => $UESP_EXT_DEFAULT,
 	"SyntaxHighlight_GeSHi" => $UESP_EXT_DEFAULT,
@@ -368,6 +369,10 @@ $wgDefaultUserOptions['usebetatoolbar'] = 0;
 $wgDefaultUserOptions['usebetatoolbar-cgd'] = 0;
 $wgDefaultUserOptions['wikieditor-preview'] = 0;
 $wgDefaultUserOptions['wikieditor-publish'] = 0;
+
+//wfLoadExtension( 'Scribunto' );
+require_once("$IP/extensions/Scribunto/Scribunto.php");
+$wgScribuntoDefaultEngine = 'luastandalone';
 
 wfLoadExtension( "PageSpeedLog" );
 wfLoadExtension( "UespPatreon" );
