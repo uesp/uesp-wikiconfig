@@ -39,7 +39,7 @@ else
 				'password' => $uespWikiPW,
 				'type' => "mysql",
 				'flag' => DBO_DEFAULT,
-				'load' => 1,
+				'load' => 1, 
 		),
 		array(          # db2 - Primary Read
 				'host' => $UESP_SERVER_DB2,
