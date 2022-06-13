@@ -59,7 +59,7 @@ $UESP_EXTENSION_INFO = [
 	"Patroller" => $UESP_EXT_UPGRADE,
 	"PdfHandler" => $UESP_EXT_DEFAULT,
 	"Poem" => $UESP_EXT_DEFAULT,
-	"ProtectSection" => $UESP_EXT_NONE,
+	//"ProtectSection" => $UESP_EXT_NONE,
 	"RecentPopularPages" => $UESP_EXT_NONE,
 	"RegexFunctions" => $UESP_EXT_UPGRADE,
 	"Renameuser" => $UESP_EXT_DEFAULT,
@@ -73,6 +73,7 @@ $UESP_EXTENSION_INFO = [
 	"TorBlock" => $UESP_EXT_UPGRADE,
 	"UespCustomCode" => $UESP_EXT_NONE,
 	"UespCustomNew" => $UESP_EXT_NONE,
+	"UespEsoData" => $UESP_EXT_NONE,
 	"UespEsoItemLink" => $UESP_EXT_NONE,
 	"UespEsoSkills" => $UESP_EXT_NONE,
 	"UespGameMap" => $UESP_EXT_NONE,
@@ -147,8 +148,11 @@ $wgPFEnableStringFunctions = true;
 $wgPFStringLengthLimit = 30000;
 
 require_once( "$IP/extensions/Patroller/Patroller.php" );
-require_once( "$IP/extensions/ProtectSection/ProtectSection.php" );
-$egProtectSectionNoAddAbove = true;
+
+// Very old extension never updated...do we even use it?
+//require_once( "$IP/extensions/ProtectSection/ProtectSection.php" );
+//$egProtectSectionNoAddAbove = true;
+
 require_once( "$IP/extensions/RegexFunctions/RegexFunctions.php" );
 wfLoadExtension( "Renameuser" );
 
@@ -179,7 +183,7 @@ $wgFFmpegLocation = '/home/uesp/ffmpeg/ffmpeg';
 require_once( "$IP/extensions/UespLegendsCards/UespLegendsCards.php" );
 
 require_once( "$IP/extensions/JsonConfig/JsonConfig.php" );
-require_once( "$IP/extensions/Graph/Graph.php" );
+wfLoadExtension("Graph");
 $wgEnableGraphParserTag = true;
 
 require_once( "$IP/extensions/RecentPopularPages/RecentPopularPages.php");
@@ -375,6 +379,8 @@ require_once("$IP/extensions/Scribunto/Scribunto.php");
 $wgScribuntoDefaultEngine = 'luastandalone';
 
 wfLoadExtension( "PageSpeedLog" );
+$wgPageSpeedLogFile = "/var/log/httpd/pagespeed.log";
+
 wfLoadExtension( "UespPatreon" );
 $wgSharedTables[] = 'patreon_user';	//Should be in extension but is not working
 wfLoadExtension( "SyntaxHighlight_GeSHi" );
@@ -384,6 +390,7 @@ require_once( "$IP/extensions/NativeSvgHandler/NativeSvgHandler.php" );
 $wgNativeSvgHandlerEnableLinks = true;
 
 wfLoadExtension( "UespGameMap" );
+wfLoadExtension( "UespEsoData" );
 
 require_once "$IP/extensions/PageImages/PageImages.php";
 $wgPageImagesNamespaces = [NS_MAIN, 102, 104, 106, 108,
