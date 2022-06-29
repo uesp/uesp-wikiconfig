@@ -56,6 +56,7 @@ $UESP_EXTENSION_INFO = [
 	"PageImages" => $UESP_EXT_UPGRADE,
 	"PageSpeedLog" => $UESP_EXT_NONE,
 	"ParserFunctions" => $UESP_EXT_DEFAULT,
+	"ParserHelper" => $UESP_EXT_NONE,
 	"Patroller" => $UESP_EXT_UPGRADE,
 	"PdfHandler" => $UESP_EXT_DEFAULT,
 	"Poem" => $UESP_EXT_DEFAULT,
@@ -63,6 +64,7 @@ $UESP_EXTENSION_INFO = [
 	"RecentPopularPages" => $UESP_EXT_NONE,
 	"RegexFunctions" => $UESP_EXT_UPGRADE,
 	"Renameuser" => $UESP_EXT_DEFAULT,
+	"Riven" => $UESP_EXT_NONE,
 	"Scribunto" => $UESP_EXT_UPGRADE,
 	"SearchLog" => $UESP_EXT_NONE,
 	"SpamBlacklist" => $UESP_EXT_DEFAULT,
@@ -88,6 +90,8 @@ $UESP_EXTENSION_INFO = [
 ];
 
 if ($UESP_UPGRADING_MW == 1) return;
+
+wfLoadExtension( 'ParserHelper' ); // Needs to be before both MetaTemplate and Riven.
 
 require_once( "$IP/extensions/AbuseFilter/AbuseFilter.php" );
 $wgAbuseFilterEmergencyDisableThreshold['default'] = 0.5;
@@ -155,7 +159,7 @@ require_once( "$IP/extensions/Patroller/Patroller.php" );
 
 require_once( "$IP/extensions/RegexFunctions/RegexFunctions.php" );
 wfLoadExtension( "Renameuser" );
-
+wfLoadExtension( 'Riven' );
 wfLoadExtension( "SpamBlacklist" );
 wfLoadExtension( "TitleBlacklist" );
 
