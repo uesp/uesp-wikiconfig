@@ -8,8 +8,10 @@
 wfLoadExtension( "Elastica" );
 require_once( "$IP/extensions/CirrusSearch/CirrusSearch.php" );
 $wgDisableSearchUpdate = false;
+
 $wgCirrusSearchServers = array( $UESP_SERVER_SEARCH );
-//$wgCirrusSearchServers = [ [ 'host' => $UESP_SERVER_SEARCH, 'port' => 9205 ] ];	// 1.29 uses ElasticSearch v5.3 on port 9205
+if ($uespIsDev) $wgCirrusSearchServers = [ [ 'host' => $UESP_SERVER_SEARCH, 'port' => 9205 ] ];	// 1.29 uses ElasticSearch v5.3 on port 9205
+
 $wgSearchType = 'CirrusSearch';
 
 # Can't enable this until the search-highlighter plugin installed on the Elastica server

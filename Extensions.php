@@ -35,6 +35,7 @@ $UESP_EXTENSION_INFO = [
 	"DwemerFont" => $UESP_EXT_NONE,
 	"Editcount" => $UESP_EXT_NONE,
 	"Elastica" => $UESP_EXT_UPGRADE,
+	"EmbedVideo" => $UESP_EXT_OTHER,		//1.29
 	"EsoCharData" => $UESP_EXT_NONE,
 	"FalmerFont" => $UESP_EXT_NONE,
 	"Gadgets" => $UESP_EXT_DEFAULT,
@@ -395,6 +396,8 @@ $wgNativeSvgHandlerEnableLinks = true;
 
 wfLoadExtension( "UespGameMap" );
 wfLoadExtension( "UespEsoData" );
+
+if ($uespIsDev) wfLoadExtension( "EmbedVideo" );
 
 require_once "$IP/extensions/PageImages/PageImages.php";
 $wgPageImagesNamespaces = [NS_MAIN, 102, 104, 106, 108,
