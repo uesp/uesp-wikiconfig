@@ -397,7 +397,7 @@ $wgNativeSvgHandlerEnableLinks = true;
 wfLoadExtension( "UespGameMap" );
 wfLoadExtension( "UespEsoData" );
 
-if ($uespIsDev) wfLoadExtension( "EmbedVideo" );
+wfLoadExtension( "EmbedVideo" );
 
 require_once "$IP/extensions/PageImages/PageImages.php";
 $wgPageImagesNamespaces = [NS_MAIN, 102, 104, 106, 108,
