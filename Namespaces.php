@@ -47,6 +47,7 @@ array(	100 => 'Tamold',             101 => 'Tamold_talk',
 		174 => 'Better_Cities',      175 => 'Better_Cities_talk',
 		176 => 'Morrowind_Rebirth',  177 => 'Morrowind_Rebirth_talk',
 		178 => 'Beyond_Skyrim',      179 => 'Beyond_Skyrim_talk',
+		180 => 'DFU_Mod',            181 => 'DFU_Mod_talk',
 		200 => 'Dapel',              201 => 'Dapel_talk');
 
 $wgNamespaceAliases =
@@ -97,6 +98,7 @@ array(	'UESP' => NS_PROJECT, 'UESP_talk' => NS_PROJECT+1,
 		'BC4' => 174,         'BC4_talk' => 175,
 		'MR3' => 176,         'MR3_talk' => 177,
 		'BS5' => 178,         'BS5_talk' => 179,
+		'DFUMod' => 180,      'DFUMod_talk' => 181
 );
 
 $wgNamespacesWithSubpages = array(
@@ -111,6 +113,7 @@ $wgNamespacesWithSubpages = array(
 		150 => 1, 151 => 1, 152 => 1, 153 => 1, 154 => 1, 155 => 1, 156 => 1, 157 => 1, 158 => 1, 159 => 1,
 		160 => 1, 161 => 1, 162 => 1, 163 => 1, 164 => 1, 165 => 1, 166 => 1, 167 => 1, 168 => 1, 169 => 1,
 		170 => 1, 171 => 1, 172 => 1, 173 => 1, 174 => 1, 175 => 1, 176 => 1, 177 => 1, 178 => 1, 179 => 1,
+		180 => 1, 181 => 1,
 		200 => 1, 201 => 1);
 
 $wgNamespacesToBeSearchedDefault = array(
@@ -125,6 +128,7 @@ $wgNamespacesToBeSearchedDefault = array(
 		150 => 1, 151 => 0, 152 => 1, 153 => 0, 154 => 1, 155 => 0, 156 => 1, 157 => 0, 158 => 1, 159 => 0,
 		160 => 1, 161 => 0, 162 => 1, 163 => 0, 164 => 1, 165 => 0, 166 => 1, 167 => 0, 168 => 1, 169 => 0,
 		170 => 1, 171 => 0, 172 => 1, 173 => 0, 174 => 1, 175 => 0, 176 => 1, 177 => 0, 178 => 1, 179 => 0,
+		180 => 1, 181 => 0,
 		200 => 0, 201 => 0);
 
 $wgContentNamespaces = array(
@@ -135,6 +139,7 @@ $wgContentNamespaces = array(
 		140, 142, 144, 146, 148,
 		150, 152, 154, 156, 158,
 		160, 162, 164, 166, 168,
-		170, 172, 174, 176, 178);
+		170, 172, 174, 176, 178,
+		180);
 
 $wgExtraSignatureNamespaces[] = NS_PROJECT;
