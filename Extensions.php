@@ -71,6 +71,7 @@ $UESP_EXTENSION_INFO = [
 	"SpamBlacklist" => $UESP_EXT_DEFAULT,
 	"SyntaxHighlight_GeSHi" => $UESP_EXT_DEFAULT,
 	"Tabs" => $UESP_EXT_UPGRADE,
+	"TemplateStyles" => $UESP_EXT_UPGRADE,
 	"TimedMediaHandler" => $UESP_EXT_UPGRADE,
 	"TitleBlacklist" => $UESP_EXT_DEFAULT,
 	"TorBlock" => $UESP_EXT_UPGRADE,
@@ -162,6 +163,7 @@ require_once( "$IP/extensions/RegexFunctions/RegexFunctions.php" );
 wfLoadExtension( "Renameuser" );
 wfLoadExtension( 'Riven' );
 wfLoadExtension( "SpamBlacklist" );
+wfLoadExtension( 'TemplateStyles' );
 wfLoadExtension( "TitleBlacklist" );
 
 require_once( "$IP/extensions/TorBlock/TorBlock.php" );
