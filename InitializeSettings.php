@@ -24,7 +24,9 @@ $uespIsApp = false;
 
 $UESP_MOBILE_SERVERS = array(
 		'm.uesp.net',
+		'ar.m.uesp.net',
 		'en.m.uesp.net',
+		'fr.m.uesp.net',
 		'it.m.uesp.net',
 		'pt.m.uesp.net',
 		'www.m.uesp.net',
@@ -36,7 +38,6 @@ $UESP_MOBILE_SERVERS = array(
 		'mobile2.uesp.net',
 		'mobile3.uesp.net',
 		'dev.m.uesp.net',
-		'ar.m.uesp.net',
 );
 
 if (in_array($_SERVER['HTTP_HOST'], $UESP_MOBILE_SERVERS, TRUE)) 
@@ -49,16 +50,18 @@ $UESP_APP_SERVERS = array(
 		'appen.uesp.net',
 		'appit.uesp.net',
 		'apppt.uesp.net',
+		'appar.uesp.net',
+		'appfr.uesp.net',
 		'en.app.uesp.net',
 		'pt.app.uesp.net',
 		'it.app.uesp.net',
+		'ar.app.uesp.net',
+		'fr.app.uesp.net',
 		'www.app.uesp.net',
 		'content1.app.uesp.net',
 		'content2.app.uesp.net',
 		'content3.app.uesp.net',
 		'dev.app.uesp.net',
-		'appar.uesp.net',
-		'ar.app.uesp.net',
 );
 
 if (in_array($_SERVER['HTTP_HOST'], $UESP_APP_SERVERS, TRUE)) 
@@ -91,6 +94,11 @@ if ($host == "it.uesp.net" || $host == "it.m.uesp.net" || $host == "it.app.uesp.
 if ($host == "ar.uesp.net" || $host == "ar.m.uesp.net" || $host == "ar.app.uesp.net" || $host == "appar.uesp.net") 
 {
 	$wgLanguageCode = "ar";
+}
+
+if ($host == "fr.uesp.net" || $host == "fr.m.uesp.net" || $host == "fr.app.uesp.net" || $host == "appfr.uesp.net" || $host == "fr.content3.uesp.net") 
+{
+	$wgLanguageCode = "fr";
 }
 
 if ($wgLanguageCode != "en")
@@ -159,7 +167,7 @@ if (php_sapi_name() == "cli") {
 			$uespLanguageSuffix = "";
 		else
 			$uespLanguageSuffix = "_" . $wgLanguageCode;
-				
+		
 		$wgServer = "https://" . $wgLanguageCode . ".uesp.net";
 	}
 	
