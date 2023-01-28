@@ -31,7 +31,7 @@ array(	100 => 'Tamold',             101 => 'Tamold_talk',
 		142 => 'Skyrim_Mod',         143 => 'Skyrim_Mod_talk',
 		144 => 'Online',             145 => 'Online_talk',
 		146 => 'Dragonborn',         147 => 'Dragonborn_talk',
-		148 => 'ESO_Mod',            149 => 'ESO_Mod_talk',
+		148 => 'Online_Mod',         149 => 'Online_Mod_talk',
 		150 => 'Legends',            151 => 'Legends_talk',
 		152 => 'Blades',             153 => 'Blades_talk',
 		154 => 'Arena_Mod',          155 => 'Arena_Mod_talk',
@@ -80,7 +80,6 @@ array(	'UESP' => NS_PROJECT, 'UESP_talk' => NS_PROJECT+1,
 		'TESO' => 144,        'TESO_talk' => 145,
 		'DB' => 146,          'DB_talk' => 147,
 		'ESOMod' => 148,      'ESOMod_talk' => 149,
-		'Online_Mod' => 148,  'Online_Mod_talk' => 149,
 		'ONMOD' => 148,       'ONMOD_talk' => 149,
 		'LG' => 150,          'LG_talk' => 151,
 		'BL' => 152,          'BL_talk' => 153,
@@ -144,3 +143,99 @@ $wgContentNamespaces = array(
 		180);
 
 $wgExtraSignatureNamespaces[] = NS_PROJECT;
+
+/* Translation Namespaces: If there's a better way to do this let me know! */
+if ($wgLanguageCode == "fr")
+{
+	$wgExtraNamespaces[118] = 'Général';
+	$wgExtraNamespaces[119] = "Général_discussion";
+	$wgNamespaceAliases['General'] = 118;
+	$wgNamespaceAliases['General_talk'] = 119;
+	
+	$wgExtraNamespaces[140] = "Livres";
+	$wgExtraNamespaces[141] = "Livres_discussion";
+	$wgNamespaceAliases['Books'] = 140;
+	$wgNamespaceAliases['Books_talk'] = 141;
+	
+	$wgExtraNamespaces[162] = "Produits_dérivés";
+	$wgExtraNamespaces[163] = "Produits dérivés_discussion";
+	$wgNamespaceAliases['Merchandise'] = 162;
+	$wgNamespaceAliases['Merchandise_talk'] = 163;
+	
+	$wgExtraNamespaces[101] = 'Tamold_discussion';
+	$wgNamespaceAliases['Tamold_talk'] = 101;
+	$wgExtraNamespaces[103] = 'Arena_discussion';
+	$wgNamespaceAliases['Arena_talk'] = 103;
+	$wgExtraNamespaces[105] = 'Daggerfall_discussion';
+	$wgNamespaceAliases['Daggerfall_talk'] = 105;
+	$wgExtraNamespaces[107] = 'Battlespire_discussion';
+	$wgNamespaceAliases['Battlespire_talk'] = 107;
+	$wgExtraNamespaces[109] = 'Redguard_discussion';
+	$wgNamespaceAliases['Redguard_talk'] = 109;
+	$wgExtraNamespaces[111] = 'Morrowind_discussion';
+	$wgNamespaceAliases['Morrowind_talk'] = 111;
+	$wgExtraNamespaces[113] = 'Tribunal_discussion';
+	$wgNamespaceAliases['Tribunal_talk'] = 113;
+	$wgExtraNamespaces[115] = 'Bloodmoon_discussion';
+	$wgNamespaceAliases['Bloodmoon_talk'] = 115;
+	$wgExtraNamespaces[117] = 'Oblivion_discussion';
+	$wgNamespaceAliases['Oblivion_talk'] = 117;
+	$wgExtraNamespaces[121] = 'Review_discussion';
+	$wgNamespaceAliases['Review_talk'] = 121;
+	$wgExtraNamespaces[123] = 'Morrowind_Mod_discussion';
+	$wgNamespaceAliases['Morrowind_Mod_talk'] = 123;
+	$wgExtraNamespaces[125] = 'Oblivion_Mod_discussion';
+	$wgNamespaceAliases['Oblivion_Mod_talk'] = 125;
+	$wgExtraNamespaces[127] = 'Shivering_discussion';
+	$wgNamespaceAliases['Shivering_talk'] = 127;
+	$wgExtraNamespaces[129] = 'Shadowkey_discussion';
+	$wgNamespaceAliases['Shadowkey_talk'] = 129;
+	$wgExtraNamespaces[131] = 'Lore_discussion';
+	$wgNamespaceAliases['Lore_talk'] = 131;
+	$wgExtraNamespaces[133] = 'Dawnstar_discussion';
+	$wgNamespaceAliases['Dawnstar_talk'] = 133;
+	$wgExtraNamespaces[135] = 'Skyrim_discussion';
+	$wgNamespaceAliases['Skyrim_talk'] = 135;
+	$wgExtraNamespaces[137] = 'OBMobile_discussion';
+	$wgNamespaceAliases['OBMobile_talk'] = 137;
+	$wgExtraNamespaces[139] = 'Stormhold_discussion';
+	$wgNamespaceAliases['Stormhold_talk'] = 139;
+	$wgExtraNamespaces[143] = 'Skyrim_Mod_discussion';
+	$wgNamespaceAliases['Skyrim_Mod_talk'] = 143;
+	$wgExtraNamespaces[145] = 'Online_discussion';
+	$wgNamespaceAliases['Online_talk'] = 145;
+	$wgExtraNamespaces[147] = 'Dragonborn_discussion';
+	$wgNamespaceAliases['Dragonborn_talk'] = 147;
+	$wgExtraNamespaces[149] = 'Online_Mod_discussion';
+	$wgNamespaceAliases['Online_Mod_talk'] = 149;
+	$wgExtraNamespaces[151] = 'Legends_discussion';
+	$wgNamespaceAliases['Legends_talk'] = 151;
+	$wgExtraNamespaces[153] = 'Blades_discussion';
+	$wgNamespaceAliases['Blades_talk'] = 153;
+	$wgExtraNamespaces[155] = 'Arena_Mod_discussion';
+	$wgNamespaceAliases['Arena_Mod_talk'] = 155;
+	$wgExtraNamespaces[157] = 'Daggerfall_Mod_discussion';
+	$wgNamespaceAliases['Daggerfall_Mod_talk'] = 157;
+	$wgExtraNamespaces[159] = 'Call_to_Arms_discussion';
+	$wgNamespaceAliases['Call_to_Arms_talk'] = 159;
+	$wgExtraNamespaces[161] = 'Mod_discussion';
+	$wgNamespaceAliases['Mod_talk'] = 161;
+	$wgExtraNamespaces[165] = 'Pinball_discussion';
+	$wgNamespaceAliases['Pinball_talk'] = 165;
+	$wgExtraNamespaces[167] = 'SkyrimVSE_discussion';
+	$wgNamespaceAliases['SkyrimVSE_talk'] = 167;
+	$wgExtraNamespaces[169] = 'Tamriel_Data_discussion';
+	$wgNamespaceAliases['Tamriel_Data_talk'] = 169;
+	$wgExtraNamespaces[171] = 'Tamriel_Rebuilt_discussion';
+	$wgNamespaceAliases['Tamriel_Rebuilt_talk'] = 171;
+	$wgExtraNamespaces[173] = 'Project_Tamriel_discussion';
+	$wgNamespaceAliases['Project_Tamriel_talk'] = 173;
+	$wgExtraNamespaces[175] = 'Better_Cities_discussion';
+	$wgNamespaceAliases['Better_Cities_talk'] = 175;
+	$wgExtraNamespaces[177] = 'Morrowind_Rebirth_discussion';
+	$wgNamespaceAliases['Morrowind_Rebirth_talk'] = 177;
+	$wgExtraNamespaces[179] = 'Beyond_Skyrim_discussion';
+	$wgNamespaceAliases['Beyond_Skyrim_talk'] = 179;
+	$wgExtraNamespaces[181] = 'DFU_Mod_discussion';
+	$wgNamespaceAliases['DFU_Mod_talk'] = 181;
+}
