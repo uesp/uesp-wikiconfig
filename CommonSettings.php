@@ -53,8 +53,9 @@ if ($uespLanguageSuffix != "")
 	$wgSharedUploadPath = '//images.uesp.net';
 	$wgSharedUploadDirectory = '/home/uesp/www/w/images/';
 	$wgHashedSharedUploadDirectory = true;
-	$wgUploadNavigationUrl = "//www.uesp.net/wiki/Special:Upload";
-	$wgUploadMissingFileUrl= "//www.uesp.net/wiki/Special:Upload";
+	$wgUploadNavigationUrl = "//en.uesp.net/wiki/Special:Upload";
+	$wgUploadMissingFileUrl= "//en.uesp.net/wiki/Special:Upload";
+	$wgRepositoryBaseUrl = "https://en.uesp.net/wiki/File:";
 }
 
 if ($uespLanguageSuffix == "_ar")
