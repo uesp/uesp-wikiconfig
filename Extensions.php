@@ -61,6 +61,7 @@ $UESP_EXTENSION_INFO = [
 	"Patroller" => $UESP_EXT_UPGRADE,
 	"PdfHandler" => $UESP_EXT_DEFAULT,
 	"Poem" => $UESP_EXT_DEFAULT,
+	"Popups" => $UESP_EXT_UPGRADE,
 	//"ProtectSection" => $UESP_EXT_NONE,
 	"RecentPopularPages" => $UESP_EXT_NONE,
 	"RegexFunctions" => $UESP_EXT_UPGRADE,
@@ -71,6 +72,7 @@ $UESP_EXTENSION_INFO = [
 	"SpamBlacklist" => $UESP_EXT_DEFAULT,
 	"SyntaxHighlight_GeSHi" => $UESP_EXT_DEFAULT,
 	"Tabs" => $UESP_EXT_UPGRADE,
+	"TextExtracts" => $UESP_EXT_UPGRADE,
 	"TemplateStyles" => $UESP_EXT_UPGRADE,
 	"TimedMediaHandler" => $UESP_EXT_UPGRADE,
 	"TitleBlacklist" => $UESP_EXT_DEFAULT,
@@ -410,3 +412,7 @@ $wgPageImagesNamespaces = [NS_MAIN, 102, 104, 106, 108,
 		150, 152, 154, 156, 158,
 		160, 162, 164, 166, 168,
 		170, 172, 174, 176, 178];
+
+wfLoadExtension( "TextExtracts" );
+wfLoadExtension( "Popups" );
+$wgPopupsReferencePreviewsBetaFeature = false;
