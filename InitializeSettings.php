@@ -7,7 +7,13 @@
 
 # dev.uesp.net host detection
 $uespIsDev = false;
-if ($_SERVER['HTTP_HOST'] == "dev.uesp.net" || $_SERVER['HTTP_HOST'] == "dev.m.uesp.net") $uespIsDev = true;
+
+if ($_SERVER['HTTP_HOST'] == "dev.uesp.net" || $_SERVER['HTTP_HOST'] == "dev.m.uesp.net" || $_SERVER['HTTP_HOST'] == "devit.uesp.net" ||
+		$_SERVER['HTTP_HOST'] == "devar.uesp.net" || $_SERVER['HTTP_HOST'] == "devpt.uesp.net" || $_SERVER['HTTP_HOST'] == "devfr.uesp.net" ||
+		$_SERVER['HTTP_HOST'] == "deven.uesp.net")
+{
+	$uespIsDev = true;
+}
 
 # backup1.uesp.net command line host detection
 $uespIsBackup1 = false;
@@ -81,22 +87,22 @@ $wgLanguageCode = "en";
 
 $host = $_SERVER['HTTP_HOST'];
 
-if ($host == "pt.uesp.net" || $host == "pt.m.uesp.net" || $host == "pt.app.uesp.net" || $host == "apppt.uesp.net") 
+if ($host == "pt.uesp.net" || $host == "pt.m.uesp.net" || $host == "pt.app.uesp.net" || $host == "apppt.uesp.net" || $host == "devpt.uesp.net")
 {
 	$wgLanguageCode = "pt";
 }
 
-if ($host == "it.uesp.net" || $host == "it.m.uesp.net" || $host == "it.app.uesp.net" || $host == "appit.uesp.net") 
+if ($host == "it.uesp.net" || $host == "it.m.uesp.net" || $host == "it.app.uesp.net" || $host == "appit.uesp.net" || $host == "devit.uesp.net")
 {
 	$wgLanguageCode = "it";
 }
 
-if ($host == "ar.uesp.net" || $host == "ar.m.uesp.net" || $host == "ar.app.uesp.net" || $host == "appar.uesp.net") 
+if ($host == "ar.uesp.net" || $host == "ar.m.uesp.net" || $host == "ar.app.uesp.net" || $host == "appar.uesp.net" || $host == "devar.uesp.net") 
 {
 	$wgLanguageCode = "ar";
 }
 
-if ($host == "fr.uesp.net" || $host == "fr.m.uesp.net" || $host == "fr.app.uesp.net" || $host == "appfr.uesp.net" || $host == "fr.content3.uesp.net") 
+if ($host == "fr.uesp.net" || $host == "fr.m.uesp.net" || $host == "fr.app.uesp.net" || $host == "appfr.uesp.net" || $host == "fr.content3.uesp.net" || $host == "devfr.uesp.net") 
 {
 	$wgLanguageCode = "fr";
 }
@@ -111,7 +117,8 @@ $wgLocalInterwikis = array( $wgLanguageCode );
 # Set server according to environment and host name
 if ($uespIsDev)
 {
-	$wgServer = "https://dev.uesp.net";
+	$wgServer = "https://dev" . $wgLanguageCode . ".uesp.net";
+	if ($wgLanguageCode == "en") $wgServer = "https://dev.uesp.net";
 }
 elseif ($uespIsApp)
 {
@@ -173,7 +180,8 @@ if (php_sapi_name() == "cli") {
 	
 	if ($uespArgs["uespdev"])
 	{
-		$wgServer = "https://dev.uesp.net";
+		$wgServer = "https://dev" . $wgLanguageCode . ".uesp.net";
+		if ($wgLanguageCode == "en") $wgServer = "https://dev.uesp.net"; 
 		$uespIsDev = true;
 		fwrite(STDERR, "\tForcing UESP dev wiki!\n");
 	}
