@@ -143,7 +143,7 @@ wfLoadExtension( "InputBox" );
 require_once( "$IP/extensions/JobQueue/JobQueue.php" );
 require_once( "$IP/extensions/LabeledSectionTransclusion/LabeledSectionTransclusion.php" );
 require_once( "$IP/extensions/MediaFunctions/MediaFunctions.php" );
-require_once( "$IP/extensions/MetaTemplate/MetaTemplate.php" );
+wfLoadExtension( "MetaTemplate" );
 
 require_once( "$IP/extensions/MobileFrontend/MobileFrontend.php" );
 $wgMobileFrontendLogo = $wgScriptPath . '/extensions/MobileFrontend/stylesheets/images/uesp-mobile-logo.png';
