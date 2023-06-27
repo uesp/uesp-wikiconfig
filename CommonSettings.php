@@ -156,5 +156,6 @@ $wgMaxImageArea = 6e7;
 if ($uespIsDev)
 {
 	$wgUploadPath = "//dev.uesp.net/w/images";
+	$wgLogo = "//images.uesp.net/e/e2/UESP_Wiki_Dev_Logo.png";
 }
 
