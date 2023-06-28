@@ -15,6 +15,7 @@ $UESP_EXT_DEFAULT = 0;		// Included with the MW extension
 $UESP_EXT_UPGRADE = 1;		// Upgrade with the uesp-getmwext script
 $UESP_EXT_OTHER = 2;		// Needs a manual upgrade
 $UESP_EXT_NONE = 3;			// Doesn't need an upgrade
+$UESP_EXT_IGNORE = 4;		// Don't do anything
 
 $UESP_EXTENSION_INFO = [
 	"AbuseFilter" => $UESP_EXT_UPGRADE,
@@ -91,6 +92,12 @@ $UESP_EXTENSION_INFO = [
 	"UsersEditCount" => $UESP_EXT_NONE,
 	"WikiEditor" => $UESP_EXT_DEFAULT,
 	"WikiTextLoggedInOut" => $UESP_EXT_UPGRADE,
+		
+	"FakeGraph" => $UESP_EXT_IGNORE,
+	"ParserHelperBackup" => $UESP_EXT_IGNORE,
+	"FakeGraphBackup" => $UESP_EXT_IGNORE,
+	"MetaTemplateBackup" => $UESP_EXT_IGNORE,
+	"RivenBackup" => $UESP_EXT_IGNORE,
 ];
 
 if ($UESP_UPGRADING_MW == 1) return;
