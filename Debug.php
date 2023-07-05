@@ -4,7 +4,7 @@
 # This file contains extension includes and settings.
 # It is included by LocalSettings.php.
 #
-
+# error_reporting(E_ALL ^ E_NOTICE);
 
 $wgDebugComments = true;
 $wgDebugToolbar = true;
