@@ -153,6 +153,8 @@ require_once( "$IP/extensions/MediaFunctions/MediaFunctions.php" );
 wfLoadExtension( "MetaTemplate" );
 
 require_once( "$IP/extensions/MobileFrontend/MobileFrontend.php" );
+wfLoadSkin( 'MinervaNeue' );
+$wgMFDefaultSkinClass = 'SkinMinervaNeue';
 $wgMobileFrontendLogo = $wgScriptPath . '/extensions/MobileFrontend/stylesheets/images/uesp-mobile-logo.png';
 $wgMFAutodetectMobileView = true;
 $wgMFCollapseSectionsByDefault = false;
