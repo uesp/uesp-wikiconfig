@@ -118,7 +118,6 @@ $wgLocaltimezone = "UTC";
 $wgMaxArticleSize = 8192;
 $wgMaxShellMemory = 1310720;
 $wgMaxShellFileSize = 1310720;
-$wgRateLimits = array(20, 360); # RM: More advanced options are supported now. Do we need/want them?
 $wgResourceLoaderMaxage = array(
 		'versioned' => array(
 				'server' => 30 * 24 * 60 * 60,
