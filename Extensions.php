@@ -199,7 +199,7 @@ $wgFFmpegLocation = '/home/uesp/ffmpeg/ffmpeg';
 require_once( "$IP/extensions/UespLegendsCards/UespLegendsCards.php" );
 
 require_once( "$IP/extensions/JsonConfig/JsonConfig.php" );
-wfLoadExtension("Graph");
+wfLoadExtension("FakeGraph");
 $wgEnableGraphParserTag = true;
 
 require_once( "$IP/extensions/RecentPopularPages/RecentPopularPages.php");
