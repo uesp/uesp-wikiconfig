@@ -17,8 +17,9 @@ $wgRemoveGroups['sysop'] = array ( 'abuseeditor', 'autopatrolled', 'blockuser', 
 # Removed group rights
 $wgGroupPermissions['*']['createpage'] = false;
 $wgGroupPermissions['*']['mapedit'] = false;
-$wgGroupPermissions['*']['esomapedit'] = false;
-$wgGroupPermissions['*']['trmapedit'] = false;
+$wgGroupPermissions['*']['mapadmin'] = false;
+$wgGroupPermissions['*']['esomapedit'] = false;	//TODO: Remove eventually
+$wgGroupPermissions['*']['trmapedit'] = false;	//TODO: Remove eventually
 $wgGroupPermissions['*']['patroller'] = false;
 
 $wgGroupPermissions['user']['move'] = false;
@@ -54,6 +55,7 @@ $wgGroupPermissions['cartographer']['mapedit'] = true;
 $wgGroupPermissions['cartographer']['esomapedit'] = true;
 $wgGroupPermissions['cartographer']['trmapedit'] = true;
 
+//TODO: Remove once new maps goes live
 $wgGroupPermissions['esocartographer']['map'] = true;
 $wgGroupPermissions['esocartographer']['mapedit'] = false;
 $wgGroupPermissions['esocartographer']['esomapedit'] = true;
@@ -68,6 +70,9 @@ $wgGroupPermissions['othercartographer']['map'] = true;
 $wgGroupPermissions['othercartographer']['mapedit'] = true;
 $wgGroupPermissions['othercartographer']['esomapedit'] = false;
 $wgGroupPermissions['othercartographer']['trmapedit'] = false;
+//End TODO
+
+$wgGroupPermissions['mapadmin']['mapadmin'] = true;
 
 $wgGroupPermissions['confirmed']['autoconfirmed'] = true;
 
