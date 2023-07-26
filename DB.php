@@ -52,7 +52,13 @@ else
 				'load' => 10,
 				'max lag' => 1000,
 		)
-	); 
+	);
+	
+		// Special case where we want to disable the read DB server
+	if ($UESP_SERVER_DBWRITE == $UESP_SERVER_DBREAD)
+	{
+		unset($wgDBservers[1]);
+	}
 	
 			/* Don't include by default as backup lag can affect production servers */
 	$uespBackup1Db = 
