@@ -175,6 +175,7 @@ wfLoadExtension( "Renameuser" );
 wfLoadExtension( 'Riven' );
 wfLoadExtension( "SpamBlacklist" );
 wfLoadExtension( 'TemplateStyles' );
+$wgTemplateStylesAllowedUrls['image'] = ["<^(https:)?//images\\.uesp\\.net/>"];
 wfLoadExtension( "TitleBlacklist" );
 
 require_once( "$IP/extensions/TorBlock/TorBlock.php" );
