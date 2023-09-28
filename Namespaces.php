@@ -49,6 +49,7 @@ array(	100 => 'Tamold',             101 => 'Tamold_talk',
 		178 => 'Beyond_Skyrim',      179 => 'Beyond_Skyrim_talk',
 		180 => 'DFU_Mod',            181 => 'DFU_Mod_talk',
 		182 => 'SkyrimTAG',          183 => 'SkyrimTAG_talk',
+		184 => 'Castles',            185 => 'Castles_talk',
 		200 => 'Dapel',              201 => 'Dapel_talk');
 
 $wgNamespaceAliases =
@@ -101,7 +102,8 @@ array(	'UESP' => NS_PROJECT,     'UESP_talk' => NS_PROJECT+1,
 		'BC4' => 174,             'BC4_talk' => 175,
 		'MR3' => 176,             'MR3_talk' => 177,
 		'BS5' => 178,             'BS5_talk' => 179,
-		'DFUMod' => 180,          'DFUMod_talk' => 181
+		'DFUMod' => 180,          'DFUMod_talk' => 181,
+		'CT' => 184,              'CT_talk' => 185
 );
 
 $wgNamespacesWithSubpages = array(
