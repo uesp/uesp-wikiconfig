@@ -118,7 +118,7 @@ $wgNamespacesWithSubpages = array(
 		150 => 1, 151 => 1, 152 => 1, 153 => 1, 154 => 1, 155 => 1, 156 => 1, 157 => 1, 158 => 1, 159 => 1,
 		160 => 1, 161 => 1, 162 => 1, 163 => 1, 164 => 1, 165 => 1, 166 => 1, 167 => 1, 168 => 1, 169 => 1,
 		170 => 1, 171 => 1, 172 => 1, 173 => 1, 174 => 1, 175 => 1, 176 => 1, 177 => 1, 178 => 1, 179 => 1,
-		180 => 1, 181 => 1, 182 => 1, 183 => 1,
+		180 => 1, 181 => 1, 182 => 1, 183 => 1, 184 => 1, 185 => 1,
 		200 => 1, 201 => 1);
 
 $wgNamespacesToBeSearchedDefault = array(
@@ -133,7 +133,7 @@ $wgNamespacesToBeSearchedDefault = array(
 		150 => 1, 151 => 0, 152 => 1, 153 => 0, 154 => 1, 155 => 0, 156 => 1, 157 => 0, 158 => 1, 159 => 0,
 		160 => 1, 161 => 0, 162 => 1, 163 => 0, 164 => 1, 165 => 0, 166 => 1, 167 => 0, 168 => 1, 169 => 0,
 		170 => 1, 171 => 0, 172 => 1, 173 => 0, 174 => 1, 175 => 0, 176 => 1, 177 => 0, 178 => 1, 179 => 0,
-		180 => 1, 181 => 0, 182 => 1, 183 => 0,
+		180 => 1, 181 => 0, 182 => 1, 183 => 0, 184 => 1, 185 => 0,
 		200 => 0, 201 => 0);
 
 $wgContentNamespaces = array(
@@ -145,7 +145,7 @@ $wgContentNamespaces = array(
 		150, 152, 154, 156, 158,
 		160, 162, 164, 166, 168,
 		170, 172, 174, 176, 178,
-		180, 182);
+		180, 182, 184);
 
 $wgExtraSignatureNamespaces[] = NS_PROJECT;
 
@@ -245,4 +245,6 @@ if ($wgLanguageCode == "fr")
 	$wgNamespaceAliases['DFU_Mod_talk'] = 181;
 	$wgExtraNamespaces[183] = 'SkyrimTAG_discussion';
 	$wgNamespaceAliases['SkyrimTAG_talk'] = 183;
+	$wgExtraNamespaces[185] = 'Castles_discussion';
+	$wgNamespaceAliases['Castles_talk'] = 183;
 }
