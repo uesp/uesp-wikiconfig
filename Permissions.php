@@ -55,28 +55,7 @@ $wgGroupPermissions['cartographer']['mapedit'] = true;
 $wgGroupPermissions['cartographer']['esomapedit'] = true;
 $wgGroupPermissions['cartographer']['trmapedit'] = true;
 
-//TODO: Remove once new maps goes live
-$wgGroupPermissions['esocartographer']['map'] = true;
-$wgGroupPermissions['esocartographer']['mapedit'] = false;
-$wgGroupPermissions['esocartographer']['esomapedit'] = true;
-$wgGroupPermissions['esocartographer']['trmapedit'] = false;
-
-$wgGroupPermissions['trcartographer']['map'] = true;
-$wgGroupPermissions['trcartographer']['mapedit'] = false;
-$wgGroupPermissions['trcartographer']['esomapedit'] = false;
-$wgGroupPermissions['trcartographer']['trmapedit'] = true;
-
-$wgGroupPermissions['othercartographer']['map'] = true;
-$wgGroupPermissions['othercartographer']['mapedit'] = true;
-$wgGroupPermissions['othercartographer']['esomapedit'] = false;
-$wgGroupPermissions['othercartographer']['trmapedit'] = false;
-//End TODO
-
-$wgGroupPermissions['mapadmin']['mapadmin'] = true;
-
 $wgGroupPermissions['confirmed']['autoconfirmed'] = true;
-
-//$wgGroupPermissions['map']['map'] = true;
 
 $wgGroupPermissions['patroller']['autopatrol'] = true;
 $wgGroupPermissions['patroller']['editinterface'] = true;
@@ -121,6 +100,27 @@ $wgGroupPermissions['translator']['tboverride'] = true;
 $wgGroupPermissions['translator']['undelete'] = true;
 
 $wgGroupPermissions['userpatroller']['tboverride'] = true;
+
+//TODO: Remove once new maps goes live
+$wgGroupPermissions['esocartographer']['map'] = true;
+$wgGroupPermissions['esocartographer']['mapedit'] = false;
+$wgGroupPermissions['esocartographer']['esomapedit'] = true;
+$wgGroupPermissions['esocartographer']['trmapedit'] = false;
+
+$wgGroupPermissions['trcartographer']['map'] = true;
+$wgGroupPermissions['trcartographer']['mapedit'] = false;
+$wgGroupPermissions['trcartographer']['esomapedit'] = false;
+$wgGroupPermissions['trcartographer']['trmapedit'] = true;
+
+$wgGroupPermissions['othercartographer']['map'] = true;
+$wgGroupPermissions['othercartographer']['mapedit'] = true;
+$wgGroupPermissions['othercartographer']['esomapedit'] = false;
+$wgGroupPermissions['othercartographer']['trmapedit'] = false;
+//End TODO
+
+$wgGroupPermissions['mapadmin']['mapadmin'] = true;
+
+//$wgGroupPermissions['map']['map'] = true;
 
 # Temporary elevation of reupload rights
 $wgGroupPermissions['user']['reupload'] = false;
