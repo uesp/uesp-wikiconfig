@@ -14,6 +14,10 @@ $wgExtensionFunctions[] = function() use ( &$wgGroupPermissions ) {
 $wgAddGroups   ['sysop'] = array ( 'abuseeditor', 'autopatrolled', 'blockuser', 'cartographer', 'confirmed', 'patroller', 'translator', 'userpatroller', 'esocartographer', 'trcartographer', 'othercartographer', 'developer', 'interface-editor' );
 $wgRemoveGroups['sysop'] = array ( 'abuseeditor', 'autopatrolled', 'blockuser', 'cartographer', 'confirmed', 'patroller', 'translator', 'userpatroller', 'esocartographer', 'trcartographer', 'othercartographer', 'developer', 'interface-editor' );
 
+# Vandalism lockdown
+//$wgGroupPermissions['*']['edit'] = false;
+//$wgGroupPermissions['*']['createaccount'] = false;
+
 # Removed group rights
 $wgGroupPermissions['*']['createpage'] = false;
 $wgGroupPermissions['*']['mapedit'] = false;
