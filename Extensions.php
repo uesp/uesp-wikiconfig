@@ -179,6 +179,7 @@ $wgTemplateStylesAllowedUrls['image'] = ["<^(https:)?//images\\.uesp\\.net/>"];
 wfLoadExtension( "TitleBlacklist" );
 
 require_once( "$IP/extensions/TorBlock/TorBlock.php" );
+$wgTorOnionooCA = false; // Current certificate isn't validating correctly, though it hasn't changed in 11 years.
 $wgGroupPermissions['user']['torunblocked'] = false;
 
 require_once( "$IP/extensions/UespCustomCode/SiteCustomCode.php" );
