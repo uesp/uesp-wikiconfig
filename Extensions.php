@@ -102,7 +102,7 @@ $UESP_EXTENSION_INFO = [
 
 if ($UESP_UPGRADING_MW == 1) return;
 
-wfLoadExtension( 'ParserHelper' ); // Needs to be before both MetaTemplate and Riven.
+wfLoadExtension( 'ParserHelper' ); // Needs to be before all extensions marked as requiring it.
 
 require_once( "$IP/extensions/AbuseFilter/AbuseFilter.php" );
 $wgAbuseFilterEmergencyDisableThreshold['default'] = 0.5;
@@ -150,7 +150,7 @@ wfLoadExtension( "InputBox" );
 require_once( "$IP/extensions/JobQueue/JobQueue.php" );
 require_once( "$IP/extensions/LabeledSectionTransclusion/LabeledSectionTransclusion.php" );
 require_once( "$IP/extensions/MediaFunctions/MediaFunctions.php" );
-wfLoadExtension( "MetaTemplate" );
+wfLoadExtension( 'MetaTemplate' ); // Requires ParserHelper
 
 require_once( "$IP/extensions/MobileFrontend/MobileFrontend.php" );
 wfLoadSkin( 'MinervaNeue' );
@@ -172,7 +172,7 @@ require_once( "$IP/extensions/Patroller/Patroller.php" );
 
 require_once( "$IP/extensions/RegexFunctions/RegexFunctions.php" );
 wfLoadExtension( "Renameuser" );
-wfLoadExtension( 'Riven' );
+wfLoadExtension( 'Riven' ); // Requires ParserHelper
 wfLoadExtension( "SpamBlacklist" );
 wfLoadExtension( 'TemplateStyles' );
 $wgTemplateStylesAllowedUrls['image'] = ["<^(https:)?//images\\.uesp\\.net/>"];
@@ -183,6 +183,7 @@ $wgTorOnionooCA = false; // Current certificate isn't validating correctly, thou
 $wgGroupPermissions['user']['torunblocked'] = false;
 
 require_once( "$IP/extensions/UespCustomCode/SiteCustomCode.php" );
+wfLoadExtension( 'NSInfo' ); // Requires ParserHelper
 require_once( "$IP/extensions/UespMap/UespMap.php" );
 require_once( "$IP/extensions/UsersEditCount/UsersEditCount.php" );
 wfLoadExtension ( "WikiTextLoggedInOut" );
