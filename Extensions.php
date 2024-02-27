@@ -218,6 +218,7 @@ $wgMessagesDirs['UploadWizard'] = array(
 ); 
 $wgUploadWizardConfig['uwLanguages'] = array( 'en' => 'English' );
 $wgUploadWizardConfig['enableCategoryCheck'] = false;
+$wgUploadWizardConfig['maxUploads'] = 1000;
 $wgUploadWizardConfig['minAuthorLength'] = 0;
 $wgUploadWizardConfig['minSourceLength'] = 0;
 $wgUploadWizardConfig['minDescriptionLength'] = 0;
