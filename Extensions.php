@@ -54,6 +54,7 @@ $UESP_EXTENSION_INFO = [
 	"MobileFrontend" => $UESP_EXT_UPGRADE,
 	"MwEmbedSupport" => $UESP_EXT_OTHER,
 	"NativeSvgHandler" => $UESP_EXT_NONE,		// Doesn't have versions available before 1.35
+	"NSInfo" => $UESP_EXT_NONE,
 	"Nuke" => $UESP_EXT_DEFAULT,
 	"PageImages" => $UESP_EXT_UPGRADE,
 	"PageSpeedLog" => $UESP_EXT_NONE,
@@ -78,6 +79,7 @@ $UESP_EXTENSION_INFO = [
 	"TimedMediaHandler" => $UESP_EXT_UPGRADE,
 	"TitleBlacklist" => $UESP_EXT_DEFAULT,
 	"TorBlock" => $UESP_EXT_UPGRADE,
+	"UespBreadCrumb" => $UESP_EXT_NONE,
 	"UespCustomCode" => $UESP_EXT_NONE,
 	"UespCustomNew" => $UESP_EXT_NONE,
 	"UespEsoData" => $UESP_EXT_NONE,
@@ -94,15 +96,9 @@ $UESP_EXTENSION_INFO = [
 	"WikiTextLoggedInOut" => $UESP_EXT_UPGRADE,
 		
 	"FakeGraph" => $UESP_EXT_IGNORE,
-	"ParserHelperBackup" => $UESP_EXT_IGNORE,
-	"FakeGraphBackup" => $UESP_EXT_IGNORE,
-	"MetaTemplateBackup" => $UESP_EXT_IGNORE,
-	"RivenBackup" => $UESP_EXT_IGNORE,
 ];
 
 if ($UESP_UPGRADING_MW == 1) return;
-
-wfLoadExtension( 'ParserHelper' ); // Needs to be before all extensions marked as requiring it.
 
 require_once( "$IP/extensions/AbuseFilter/AbuseFilter.php" );
 $wgAbuseFilterEmergencyDisableThreshold['default'] = 0.5;
@@ -150,7 +146,6 @@ wfLoadExtension( "InputBox" );
 require_once( "$IP/extensions/JobQueue/JobQueue.php" );
 require_once( "$IP/extensions/LabeledSectionTransclusion/LabeledSectionTransclusion.php" );
 require_once( "$IP/extensions/MediaFunctions/MediaFunctions.php" );
-wfLoadExtension( 'MetaTemplate' ); // Requires ParserHelper
 
 require_once( "$IP/extensions/MobileFrontend/MobileFrontend.php" );
 wfLoadSkin( 'MinervaNeue' );
@@ -172,7 +167,6 @@ require_once( "$IP/extensions/Patroller/Patroller.php" );
 
 require_once( "$IP/extensions/RegexFunctions/RegexFunctions.php" );
 wfLoadExtension( "Renameuser" );
-wfLoadExtension( 'Riven' ); // Requires ParserHelper
 wfLoadExtension( "SpamBlacklist" );
 wfLoadExtension( 'TemplateStyles' );
 $wgTemplateStylesAllowedUrls['image'] = ["<^(https:)?//images\\.uesp\\.net/>"];
@@ -183,7 +177,6 @@ $wgTorOnionooCA = false; // Current certificate isn't validating correctly, thou
 $wgGroupPermissions['user']['torunblocked'] = false;
 
 require_once( "$IP/extensions/UespCustomCode/SiteCustomCode.php" );
-wfLoadExtension( 'NSInfo' ); // Requires ParserHelper
 require_once( "$IP/extensions/UespMap/UespMap.php" );
 require_once( "$IP/extensions/UsersEditCount/UsersEditCount.php" );
 wfLoadExtension ( "WikiTextLoggedInOut" );
@@ -429,3 +422,9 @@ $wgPageImagesNamespaces = [NS_MAIN, 102, 104, 106, 108,
 wfLoadExtension( "TextExtracts" );
 wfLoadExtension( "Popups" );
 $wgPopupsReferencePreviewsBetaFeature = false;
+
+wfLoadExtension( 'ParserHelper' );
+wfLoadExtension( 'MetaTemplate' ); // Dependent on ParserHelper
+wfLoadExtension( 'NSInfo' ); // Dependent on ParserHelper
+wfLoadExtension( 'Riven' ); // Dependent on ParserHelper
+wfLoadExtension( 'UespBreadCrumb' ); // Dependent on ParserHelper
