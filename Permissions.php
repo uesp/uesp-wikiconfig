@@ -60,6 +60,10 @@ $wgGroupPermissions['cartographer']['esomapedit'] = true;
 $wgGroupPermissions['cartographer']['trmapedit'] = true;
 
 $wgGroupPermissions['confirmed']['autoconfirmed'] = true;
+$wgGroupPermissions['confirmed']['editsemiprotected'] = true;
+$wgGroupPermissions['confirmed']['move'] = true;
+$wgGroupPermissions['confirmed']['reupload'] = true;
+$wgGroupPermissions['confirmed']['transcode-reset'] = true;
 
 $wgGroupPermissions['employee']['autoconfirmed'] = true;
 $wgGroupPermissions['employee']['autopatrol'] = true;
