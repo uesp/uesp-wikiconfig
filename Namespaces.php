@@ -248,5 +248,5 @@ if ($wgLanguageCode == "fr")
 	$wgExtraNamespaces[183] = 'SkyrimTAG_discussion';
 	$wgNamespaceAliases['SkyrimTAG_talk'] = 183;
 	$wgExtraNamespaces[185] = 'Castles_discussion';
-	$wgNamespaceAliases['Castles_talk'] = 183;
+	$wgNamespaceAliases['Castles_talk'] = 185;
 }
