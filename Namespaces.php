@@ -249,4 +249,6 @@ if ($wgLanguageCode == "fr")
 	$wgNamespaceAliases['SkyrimTAG_talk'] = 183;
 	$wgExtraNamespaces[185] = 'Castles_discussion';
 	$wgNamespaceAliases['Castles_talk'] = 185;
+	$wgExtraNamespaces[187] = 'Betrayal_discussion';
+	$wgNamespaceAliases['Betrayal_talk'] = 187;
 }
