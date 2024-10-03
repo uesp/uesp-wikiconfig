@@ -20,6 +20,7 @@ $UESP_EXT_IGNORE = 4;		// Don't do anything
 $UESP_EXTENSION_INFO = [
 	"AbuseFilter" => $UESP_EXT_UPGRADE,
 	"AntiSpoof" => $UESP_EXT_UPGRADE,
+	"AudioButton" => $UESP_EXT_OTHER,
 	"CharInsert" => $UESP_EXT_UPGRADE,
 	"CheckUser" => $UESP_EXT_UPGRADE,
 	"CirrusSearch" => $UESP_EXT_UPGRADE,
@@ -104,6 +105,7 @@ require_once( "$IP/extensions/AbuseFilter/AbuseFilter.php" );
 $wgAbuseFilterEmergencyDisableThreshold['default'] = 0.5;
 
 require_once( "$IP/extensions/AntiSpoof/AntiSpoof.php" );
+wfLoadExtension( 'AudioButton' );
 wfLoadExtension( "CharInsert" );
 wfLoadExtension( "CheckUser" );
 wfLoadExtension( "Cite" );
