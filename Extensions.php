@@ -135,6 +135,7 @@ $wgCaptchaQuestions[] = array (
 // ------------------
 $wgCaptchaTriggers['addurl'] = false;
 
+wfLoadExtension( 'CSS' );
 require_once( "$IP/extensions/DailyEdits/DailyEdits.php" );
 $wgDailyEditsGraphFile = "//content3.uesp.net/w/extensions/UespCustomCode/files/dailyedits.png";
 
