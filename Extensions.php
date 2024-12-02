@@ -403,6 +403,7 @@ wfLoadExtension( "UespPatreon" );
 $wgSharedTables[] = 'patreon_user';	//Should be in extension but is not working
 wfLoadExtension( "SyntaxHighlight_GeSHi" );
 wfLoadExtension( "UespShortLinks" );
+wfLoadExtension( 'WikiAppApi');
 
 require_once( "$IP/extensions/NativeSvgHandler/NativeSvgHandler.php" );
 $wgNativeSvgHandlerEnableLinks = true;
