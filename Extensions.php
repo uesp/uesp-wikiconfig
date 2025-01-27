@@ -151,6 +151,7 @@ wfLoadExtension( 'LabeledSectionTransclusion' );
 require_once( "$IP/extensions/MediaFunctions/MediaFunctions.php" );
 
 wfLoadExtension( 'MobileFrontend' );
+$wgMFRemovableClasses['base'] = array_diff($wgMFRemovableClasses['base'], ['.navbox']);
 wfLoadSkin( 'MinervaNeue' );
 $wgMFDefaultSkinClass = 'SkinMinervaNeue';
 $wgMobileFrontendLogo = $wgScriptPath . '/extensions/MobileFrontend/stylesheets/images/uesp-mobile-logo.png';
