@@ -11,8 +11,8 @@ $wgExtensionFunctions[] = function() use ( &$wgGroupPermissions ) {
 };
 
 # Rights to add or remove user groups
-$wgAddGroups   ['sysop'] = array ( 'abuseeditor', 'autopatrolled', 'blockuser', 'cartographer', 'confirmed', 'patroller', 'translator', 'userpatroller', 'esocartographer', 'trcartographer', 'othercartographer', 'developer', 'interface-editor' );
-$wgRemoveGroups['sysop'] = array ( 'abuseeditor', 'autopatrolled', 'blockuser', 'cartographer', 'confirmed', 'patroller', 'translator', 'userpatroller', 'esocartographer', 'trcartographer', 'othercartographer', 'developer', 'interface-editor' );
+$wgAddGroups   ['sysop'] = array ( 'abuseeditor', 'autopatrolled', 'blockuser', 'cartographer', 'confirmed', 'patroller', 'translator', 'userpatroller', 'esocartographer', 'trcartographer', 'othercartographer', 'developer', 'interface-editor', 'pagemover' );
+$wgRemoveGroups['sysop'] = array ( 'abuseeditor', 'autopatrolled', 'blockuser', 'cartographer', 'confirmed', 'patroller', 'translator', 'userpatroller', 'esocartographer', 'trcartographer', 'othercartographer', 'developer', 'interface-editor', 'pagemover' );
 
 # Vandalism lockdown
 //$wgGroupPermissions['*']['edit'] = false;
@@ -80,6 +80,8 @@ $wgGroupPermissions['employee']['suppressredirect'] = true;
 $wgGroupPermissions['employee']['tboverride'] = true;
 
 $wgGroupPermissions['interface-editor']['editinterface'] = true;
+
+$wgGroupPermissions['pagemover']['suppressredirect'] = true;
 
 $wgGroupPermissions['patroller']['autopatrol'] = true;
 $wgGroupPermissions['patroller']['movefile'] = true;
