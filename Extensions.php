@@ -35,6 +35,8 @@ $UESP_EXTENSION_INFO = [
 	"CirrusSearch" => $UESP_EXT_UPGRADE,
 	"Cite" => $UESP_EXT_DEFAULT,
 	"CiteThisPage" => $UESP_EXT_DEFAULT,
+	"CodeEditor" => $UESP_EXT_UPGRADE,
+	"CodeMirror" => $UESP_EXT_UPGRADE,
 	"ConfirmEdit" => $UESP_EXT_DEFAULT,
 	"CSS" => $UESP_EXT_UPGRADE,
 	"DaedricFont" => $UESP_EXT_NONE,
@@ -103,6 +105,7 @@ $UESP_EXTENSION_INFO = [
 	"UespMap" => $UESP_EXT_NONE,
 	"UespPatreon" => $UESP_EXT_NONE,
 	"UespShortLinks" => $UESP_EXT_NONE,
+	"UniversalLanguageSelector" => $UESP_EXT_UPGRADE,
 	"UploadWizard" => $UESP_EXT_UPGRADE,
 	"UsersEditCount" => $UESP_EXT_NONE,
 	"WikiEditor" => $UESP_EXT_DEFAULT,
@@ -168,7 +171,7 @@ $wgMFRemovableClasses = array(
     "beta" => array(),
   // These rules will be used for all transformations
     "base" => array(
-    	".navbox",
+        ".navbox",
         ".vertical-navbox",
         ".nomobile"
 	)
@@ -231,6 +234,7 @@ $wgEnableGraphParserTag = true;
 require_once( "$IP/extensions/RecentPopularPages/RecentPopularPages.php");
 require_once( "$IP/extensions/Tabs/Tabs.php" );
 
+wfLoadExtension( 'UniversalLanguageSelector' );
 wfLoadExtension( 'UploadWizard' );
 
 $wgMessagesDirs['UploadWizard'] = array(
@@ -390,15 +394,6 @@ $wgResourceModules['ext.uploadWizardUesp']['messages'] = array(
 		"mwe-upwiz-license-screenshots-head",
 );
 
-	/* TODO: Only need to load for the Special:UploadWizard page */
-$wgHooks['BeforePageDisplay'][] = 'UESPUploadWizard_beforePageDisplay';
-
-function UESPUploadWizard_beforePageDisplay($out, $skin)
-{
-	$out->addModules( 'ext.uploadWizardUesp' );
-}
-
-
 # wfLoadExtension( 'DisableAccount' );
 # $wgGroupPermissions['bureaucrat']['disableaccount'] = true;
 # $wgGroupPermissions['sysop']['disableaccount'] = true;
@@ -456,3 +451,10 @@ wfLoadExtension( 'MetaTemplate' ); // Dependent on ParserHelper
 wfLoadExtension( 'NSInfo' ); // Dependent on ParserHelper
 wfLoadExtension( 'Riven' ); // Dependent on ParserHelper
 wfLoadExtension( 'UespBreadCrumb' ); // Dependent on ParserHelper
+
+wfLoadExtension( 'CodeMirror' );
+$wgDefaultUserOptions["usecodemirror"] = 1;
+### Enable bracket matching in CodeMirror
+$wgCodeMirrorEnableBracketMatching = true;
+
+wfLoadExtension( 'CodeEditor' );
