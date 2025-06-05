@@ -206,7 +206,6 @@ wfLoadExtension( 'TorBlock' );
 $wgTorOnionooCA = false; // Current certificate isn't validating correctly, though it hasn't changed in 11 years.
 $wgGroupPermissions['user']['torunblocked'] = false;
 
-wfLoadExtension( 'UespCustomCode' );
 // $egRestrictBlockLength = 6 * 3600;
 require_once( "$IP/extensions/UespMap/UespMap.php" );
 wfLoadExtension( 'UsersEditCount' );
@@ -234,7 +233,7 @@ $wgEnableGraphParserTag = true;
 require_once( "$IP/extensions/RecentPopularPages/RecentPopularPages.php");
 require_once( "$IP/extensions/Tabs/Tabs.php" );
 
-wfLoadExtension( 'UniversalLanguageSelector' );
+//wfLoadExtension( 'UniversalLanguageSelector' );
 wfLoadExtension( 'UploadWizard' );
 
 $wgMessagesDirs['UploadWizard'] = array(
@@ -458,3 +457,5 @@ $wgDefaultUserOptions["usecodemirror"] = 1;
 $wgCodeMirrorEnableBracketMatching = true;
 
 wfLoadExtension( 'CodeEditor' );
+
+wfLoadExtension( 'UespCustomCode' );
