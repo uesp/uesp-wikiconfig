@@ -160,6 +160,8 @@ set_time_limit(60);
 $wgCookieSecure = false;
 $wgMaxImageArea = 6e7;
 
+$wgLogAutopatrol = true;
+
 if ($uespIsDev)
 {
 	$wgUploadPath = "//dev.uesp.net/w/images";
