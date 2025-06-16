@@ -450,6 +450,7 @@ wfLoadExtension( 'MetaTemplate' ); // Dependent on ParserHelper
 wfLoadExtension( 'NSInfo' ); // Dependent on ParserHelper
 wfLoadExtension( 'Riven' ); // Dependent on ParserHelper
 wfLoadExtension( 'UespBreadCrumb' ); // Dependent on ParserHelper
+$egBreadCrumbSavePropertyAs = 'html';
 
 wfLoadExtension( 'CodeMirror' );
 $wgDefaultUserOptions["usecodemirror"] = 1;
