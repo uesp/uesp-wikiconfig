@@ -207,7 +207,7 @@ $wgTorOnionooCA = false; // Current certificate isn't validating correctly, thou
 $wgGroupPermissions['user']['torunblocked'] = false;
 
 // $egRestrictBlockLength = 6 * 3600;
-require_once( "$IP/extensions/UespMap/UespMap.php" );
+//require_once( "$IP/extensions/UespMap/UespMap.php" );
 wfLoadExtension( 'UsersEditCount' );
 wfLoadExtension ( "WikiTextLoggedInOut" );
 wfLoadSkin( "UespMonoBook" );
@@ -439,7 +439,8 @@ $wgPageImagesNamespaces = [NS_MAIN, 102, 104, 106, 108,
 		140, 142, 144, 146, 148,
 		150, 152, 154, 156, 158,
 		160, 162, 164, 166, 168,
-		170, 172, 174, 176, 178];
+		170, 172, 174, 176, 178];		
+$wgPageImagesOpenGraphFallbackImage = "https://images.uesp.net/4/40/NewUESPLogo1.png";
 
 wfLoadExtension( "TextExtracts" );
 wfLoadExtension( "Popups" );
