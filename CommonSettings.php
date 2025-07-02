@@ -33,6 +33,7 @@ $wgAllowExternalImages = true;
 $wgUploadPath       = "//images.uesp.net";
 $wgUploadDirectory  = "$IP/images";
 $wgUseInstantCommons = false;
+$wgRestrictDisplayTitle = false;
 
 $wgUseImageMagick = true;
 $wgImageMagickTempDir = "/imagetmp";
