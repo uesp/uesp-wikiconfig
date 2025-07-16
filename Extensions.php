@@ -42,6 +42,7 @@ $UESP_EXTENSION_INFO = [
 	"DaedricFont" => $UESP_EXT_NONE,
 	"DailyEdits" => $UESP_EXT_NONE,
 	"DeleteBatch" => $UESP_EXT_UPGRADE,
+	"Description2" => $UESP_EXT_UPGRADE,
 	"DisableAccount" => $UESP_EXT_UPGRADE,
 	"Disambiguator" => $UESP_EXT_UPGRADE,
 	"DismissableSiteNotice" => $UESP_EXT_UPGRADE,
@@ -440,7 +441,7 @@ $wgPageImagesNamespaces = [NS_MAIN, 102, 104, 106, 108,
 		140, 142, 144, 146, 148,
 		150, 152, 154, 156, 158,
 		160, 162, 164, 166, 168,
-		170, 172, 174, 176, 178];		
+		170, 172, 174, 176, 178];
 $wgPageImagesOpenGraphFallbackImage = "https://images.uesp.net/4/40/NewUESPLogo1.png";
 
 wfLoadExtension( "TextExtracts" );
@@ -460,5 +461,8 @@ $wgDefaultUserOptions["usecodemirror"] = 1;
 $wgCodeMirrorEnableBracketMatching = true;
 
 wfLoadExtension( 'CodeEditor' );
+
+wfLoadExtension( 'Description2' );
+$wgEnableMetaDescriptionFunctions = true;
 
 wfLoadExtension( 'UespCustomCode' );
