@@ -145,7 +145,7 @@ $wgAllowSiteCSSOnRestrictedPages = true;
 
 # When you make changes to this configuration file, change this date if
 # required to make sure that cached pages are cleared.
-$wgCacheEpoch = '20230705090600';
+$wgCacheEpoch = '2025074090600';
 $wgInvalidateCacheOnLocalSettingsChange = false;
 
 //$wgReadOnly = ( PHP_SAPI === 'cli' ) ? false : 'This wiki is currently being upgraded to a newer software version. Please check back shortly.';
