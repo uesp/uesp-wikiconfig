@@ -156,8 +156,8 @@ $wgExtraSignatureNamespaces[] = NS_PROJECT;
 /* Translation Namespaces: If there's a better way to do this let me know! */
 if ($wgLanguageCode == "fr")
 {
-	$wgExtraNamespaces[118] = "Général";
-	$wgExtraNamespaces[119] = "Général_discussion";
+	$wgExtraNamespaces[118] = "GÃ©nÃ©ral";
+	$wgExtraNamespaces[119] = "GÃ©nÃ©ral_discussion";
 	$wgNamespaceAliases['General'] = 118;
 	$wgNamespaceAliases['General_talk'] = 119;
 	
@@ -166,8 +166,8 @@ if ($wgLanguageCode == "fr")
 	$wgNamespaceAliases['Books'] = 140;
 	$wgNamespaceAliases['Books_talk'] = 141;
 	
-	$wgExtraNamespaces[162] = "Produits_dérivés";
-	$wgExtraNamespaces[163] = "Produits dérivés_discussion";
+	$wgExtraNamespaces[162] = "Produits_dÃ©rivÃ©s";
+	$wgExtraNamespaces[163] = "Produits dÃ©rivÃ©s_discussion";
 	$wgNamespaceAliases['Merchandise'] = 162;
 	$wgNamespaceAliases['Merchandise_talk'] = 163;
 	

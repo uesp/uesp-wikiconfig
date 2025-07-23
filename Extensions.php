@@ -42,6 +42,7 @@ $UESP_EXTENSION_INFO = [
 	"DaedricFont" => $UESP_EXT_NONE,
 	"DailyEdits" => $UESP_EXT_NONE,
 	"DeleteBatch" => $UESP_EXT_UPGRADE,
+	"Description2" => $UESP_EXT_UPGRADE,
 	"DisableAccount" => $UESP_EXT_UPGRADE,
 	"Disambiguator" => $UESP_EXT_UPGRADE,
 	"DismissableSiteNotice" => $UESP_EXT_UPGRADE,
@@ -184,6 +185,7 @@ $wgMobileFrontendLogo = $wgScriptPath . '/extensions/MobileFrontend/stylesheets/
 $wgMFAutodetectMobileView = true;
 $wgMFCollapseSectionsByDefault = false;
 $wgMFContentNamespace = "NS_MAIN|102|104|106|108|110|112|114|116|118|120|122|124|126|128|130|132|134|136|138|140|142|144|146|148|150|152|154|156|158|160|162|164|166|168|170|172|174|176|178";
+$wgMFMobileMainPageCss = true;
 
 wfLoadExtension( "ParserFunctions" );
 $wgPFEnableStringFunctions = true;
@@ -207,7 +209,7 @@ $wgTorOnionooCA = false; // Current certificate isn't validating correctly, thou
 $wgGroupPermissions['user']['torunblocked'] = false;
 
 // $egRestrictBlockLength = 6 * 3600;
-require_once( "$IP/extensions/UespMap/UespMap.php" );
+//require_once( "$IP/extensions/UespMap/UespMap.php" );
 wfLoadExtension( 'UsersEditCount' );
 wfLoadExtension ( "WikiTextLoggedInOut" );
 wfLoadSkin( "UespMonoBook" );
@@ -440,6 +442,7 @@ $wgPageImagesNamespaces = [NS_MAIN, 102, 104, 106, 108,
 		150, 152, 154, 156, 158,
 		160, 162, 164, 166, 168,
 		170, 172, 174, 176, 178];
+$wgPageImagesOpenGraphFallbackImage = "https://images.uesp.net/4/40/NewUESPLogo1.png";
 
 wfLoadExtension( "TextExtracts" );
 wfLoadExtension( "Popups" );
@@ -450,6 +453,7 @@ wfLoadExtension( 'MetaTemplate' ); // Dependent on ParserHelper
 wfLoadExtension( 'NSInfo' ); // Dependent on ParserHelper
 wfLoadExtension( 'Riven' ); // Dependent on ParserHelper
 wfLoadExtension( 'UespBreadCrumb' ); // Dependent on ParserHelper
+$egBreadCrumbSavePropertyAs = 'html';
 
 wfLoadExtension( 'CodeMirror' );
 $wgDefaultUserOptions["usecodemirror"] = 1;
@@ -457,5 +461,8 @@ $wgDefaultUserOptions["usecodemirror"] = 1;
 $wgCodeMirrorEnableBracketMatching = true;
 
 wfLoadExtension( 'CodeEditor' );
+
+wfLoadExtension( 'Description2' );
+$wgEnableMetaDescriptionFunctions = true;
 
 wfLoadExtension( 'UespCustomCode' );
