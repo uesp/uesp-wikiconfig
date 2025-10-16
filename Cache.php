@@ -6,12 +6,12 @@
 #
 
 $wgMainCacheType = CACHE_MEMCACHED;
-$wgSessionsInObjectCache = false;
+//$wgSessionsInObjectCache = false;
 $wgSessionCacheType = CACHE_DB;
 $wgObjectCacheSessionExpiry = 100000;
 $wgMemCachedServers = array($UESP_SERVER_MEMCACHED . ":11000");
 
-$wgCacheEpoch = 20250607170041;
+$wgCacheEpoch = 20251007195745;
 
 $wgFileCacheDirectory = "/mnt/uesp/filecache";
 $wgUseFileCache = true;

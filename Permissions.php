@@ -80,6 +80,9 @@ $wgGroupPermissions['employee']['suppressredirect'] = true;
 $wgGroupPermissions['employee']['tboverride'] = true;
 
 $wgGroupPermissions['interface-editor']['editinterface'] = true;
+$wgGroupPermissions['interface-editor']['editsitecss'] = true;
+$wgGroupPermissions['interface-editor']['editsitejs'] = true;
+$wgGroupPermissions['interface-editor']['editsitejson'] = true;
 
 $wgGroupPermissions['pagemover']['suppressredirect'] = true;
 
@@ -113,6 +116,9 @@ $wgGroupPermissions['translator']['autopatrol'] = true;
 $wgGroupPermissions['translator']['delete'] = true;
 $wgGroupPermissions['translator']['deleterevision'] = true;
 $wgGroupPermissions['translator']['editinterface'] = true;
+$wgGroupPermissions['translator']['editsitecss'] = true;
+$wgGroupPermissions['translator']['editsitejs'] = true;
+$wgGroupPermissions['translator']['editsitejson'] = true;
 $wgGroupPermissions['translator']['editprotected'] = true;
 $wgGroupPermissions['translator']['editsemiprotected'] = true;
 $wgGroupPermissions['translator']['import'] = true;
