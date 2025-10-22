@@ -68,7 +68,6 @@ $UESP_EXTENSION_INFO = [
 	"MetaTemplate" => $UESP_EXT_NONE,
 	"MobileFrontend" => $UESP_EXT_UPGRADE,
 	"Mpdf" => $UESP_EXT_IGNORE,
-	"MwEmbedSupport" => $UESP_EXT_OTHER,
 	"NativeSvgHandler" => $UESP_EXT_NONE,		// Doesn't have versions available before 1.35
 	"NSInfo" => $UESP_EXT_NONE,
 	"Nuke" => $UESP_EXT_DEFAULT,
@@ -127,9 +126,7 @@ wfLoadExtension( "Cite" );
 wfLoadExtension( "CiteThisPage" );
 
 // Based on http://thingelstad.com/stopping-mediawiki-spam-with-dynamic-questy-captchas/
-wfLoadExtension( "ConfirmEdit" );
-require_once("$IP/extensions/ConfirmEdit/QuestyCaptcha.php");
-$wgCaptchaClass = 'QuestyCaptcha';
+wfLoadExtensions([ 'ConfirmEdit', 'ConfirmEdit/QuestyCaptcha' ]);
 
 # Now a more complicated one
 # Generate a random string 10 characters long
@@ -219,8 +216,7 @@ require_once( "$IP/extensions/EsoCharData/EsoCharData.php" );
 require_once( "$IP/extensions/UespEsoItemLink/UespEsoItemLink.php" );
 require_once( "$IP/extensions/UespEsoSkills/UespEsoSkills.php" );
 
-require_once( "$IP/extensions/MwEmbedSupport/MwEmbedSupport.php" );
-require_once( "$IP/extensions/TimedMediaHandler/TimedMediaHandler.php" );
+wfLoadExtension( "TimedMediaHandler" );
 $wgEnableTranscode = true;
 $wgTranscodeBackgroundTimeLimit = 60 * 5;
 	# Use custom compiled version instead of default one at /usr/bin/
@@ -466,3 +462,5 @@ wfLoadExtension( 'Description2' );
 $wgEnableMetaDescriptionFunctions = true;
 
 wfLoadExtension( 'UespCustomCode' );
+
+$egAnonBlockedSpecialPages = ['WantedPages','MostLinkedCategories'];
