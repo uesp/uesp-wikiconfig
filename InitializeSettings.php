@@ -6,23 +6,23 @@
 #
 
 # dev.uesp.net host detection
-$server = $_SERVER['HTTP_HOST'];
-if (!isset($server)){
-	$fullserver = explode('://', $_SERVER['SERVER_NAME'], 2);
-	$server = count($fullserver) == 2 ? $fullserver[1] : '';
+$host = $_SERVER['HTTP_HOST'];
+if (!isset($host)){
+	$split = explode('://', $_SERVER['SERVER_NAME'], 2);
+	$host = count($split) == 2 ? $split[1] : '';
 }
 
 $UESP_DEV_SERVERS = [
 	"dev.uesp.net",
 	"dev.m.uesp.net",
 	"devar.uesp.net",
-	"deven.uesp.net"
+	"deven.uesp.net",
 	"devfr.uesp.net",
 	"devit.uesp.net",
 	"devpt.uesp.net",
 ];
-$uespIsDev = in_array($server, $UESP_DEV_SERVERS, true);
-# echo "\$server=$server\n";
+$uespIsDev = in_array($host, $UESP_DEV_SERVERS, true);
+# echo "\$host=$host\n";
 # if ($uespIsDev) echo "Running as UESP Dev!\n";
 
 # backup1.uesp.net command line host detection
@@ -56,7 +56,7 @@ $UESP_MOBILE_SERVERS = array(
 		'dev.m.uesp.net',
 );
 
-if (isset($server) && in_array($server, $UESP_MOBILE_SERVERS, TRUE)) 
+if (in_array($host, $UESP_MOBILE_SERVERS, TRUE)) 
 {
 	$uespIsMobile = true;
 }
@@ -80,7 +80,7 @@ $UESP_APP_SERVERS = array(
 		'dev.app.uesp.net',
 );
 
-if (isset($server) && (in_array($server, $UESP_APP_SERVERS, TRUE))) 
+if (in_array($host, $UESP_APP_SERVERS, TRUE))
 {
 	$uespIsApp = true;
 	$uespIsMobile = true;
@@ -94,8 +94,6 @@ $uespLanguageSuffix = "";
 
 # TODO: More robust language detection
 $wgLanguageCode = "en";
-
-$host = isset($server) ? $server : "";
 
 if ($host == "pt.uesp.net" || $host == "pt.m.uesp.net" || $host == "pt.app.uesp.net" || $host == "apppt.uesp.net" || $host == "devpt.uesp.net")
 {
