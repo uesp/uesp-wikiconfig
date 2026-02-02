@@ -411,7 +411,7 @@ $wgDefaultUserOptions['wikieditor-publish'] = 0;
 
 wfLoadExtension( 'Scribunto' );
 $wgScribuntoDefaultEngine = 'luastandalone';
-$wgScribuntoEngineConf['luastanalone']['cpuLimit'] = 10;
+$wgScribuntoEngineConf['luastandalone']['cpuLimit'] = 10;
 
 wfLoadExtension( "PageSpeedLog" );
 $wgPageSpeedLogFile = "/var/log/httpd/pagespeed.log";
