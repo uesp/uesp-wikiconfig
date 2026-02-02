@@ -410,8 +410,8 @@ $wgDefaultUserOptions['wikieditor-preview'] = 0;
 $wgDefaultUserOptions['wikieditor-publish'] = 0;
 
 wfLoadExtension( 'Scribunto' );
-$wgScribuntoDefaultEngine = 'luasandbox';
-$wgScribuntoEngineConf['luasandbox']['cpuLimit'] = 10;
+$wgScribuntoDefaultEngine = 'luastandalone';
+$wgScribuntoEngineConf['luastanalone']['cpuLimit'] = 10;
 
 wfLoadExtension( "PageSpeedLog" );
 $wgPageSpeedLogFile = "/var/log/httpd/pagespeed.log";
@@ -495,7 +495,5 @@ $egAnonBlockedSpecialPages = [
 	'UnusedFiles',
 	'UnusedPages',
 	'UnusedTemplates',
-	'WantedPages',
-	'NewFiles',
-	'ListFiles'
+	'WantedPages'
 ];

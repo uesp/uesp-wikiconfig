@@ -11,7 +11,7 @@ $wgSessionCacheType = CACHE_DB;
 $wgObjectCacheSessionExpiry = 100000;
 $wgMemCachedServers = array($UESP_SERVER_MEMCACHED . ":11000");
 
-$wgCacheEpoch = 20250911170041;
+$wgCacheEpoch = 20250607170041;
 
 $wgFileCacheDirectory = "/mnt/uesp/filecache";
 $wgUseFileCache = true;
@@ -56,4 +56,3 @@ else
 	$wgSquidServersNoPurge[] = "2a06:98c0::/29";
 	$wgSquidServersNoPurge[] = "2c0f:f248::/32";
 }
-

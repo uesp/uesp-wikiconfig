@@ -9,7 +9,6 @@ error_reporting(E_ALL ^ E_NOTICE);
 $wgDebugComments = true;
 $wgDebugToolbar = true;
 //$wgUseSquid = false;
-$wgShowDebug = true;
 $wgShowSQLErrors = true;
 $wgShowExceptionDetails = true;
 $wgDevelopmentWarnings = true;

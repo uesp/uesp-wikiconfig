@@ -6,24 +6,14 @@
 #
 
 # dev.uesp.net host detection
-$host = $_SERVER['HTTP_HOST'];
-if (!isset($host)){
-	$split = explode('://', $_SERVER['SERVER_NAME'], 2);
-	$host = count($split) == 2 ? $split[1] : '';
-}
+$uespIsDev = false;
 
-$UESP_DEV_SERVERS = [
-	"dev.uesp.net",
-	"dev.m.uesp.net",
-	"devar.uesp.net",
-	"deven.uesp.net",
-	"devfr.uesp.net",
-	"devit.uesp.net",
-	"devpt.uesp.net",
-];
-$uespIsDev = in_array($host, $UESP_DEV_SERVERS, true);
-# echo "\$host=$host\n";
-# if ($uespIsDev) echo "Running as UESP Dev!\n";
+if (isset($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST'] == "dev.uesp.net" || $_SERVER['HTTP_HOST'] == "dev.m.uesp.net" || $_SERVER['HTTP_HOST'] == "devit.uesp.net" ||
+		$_SERVER['HTTP_HOST'] == "devar.uesp.net" || $_SERVER['HTTP_HOST'] == "devpt.uesp.net" || $_SERVER['HTTP_HOST'] == "devfr.uesp.net" ||
+		$_SERVER['HTTP_HOST'] == "deven.uesp.net"))
+{
+	$uespIsDev = true;
+}
 
 # backup1.uesp.net command line host detection
 $uespIsBackup1 = false;
@@ -49,7 +39,6 @@ $UESP_MOBILE_SERVERS = array(
 		'content1.m.uesp.net',
 		'content2.m.uesp.net',
 		'content3.m.uesp.net',
-		'content4.m.uesp.net',
 		'mobile.uesp.net',
 		'mobile1.uesp.net',
 		'mobile2.uesp.net',
@@ -57,7 +46,7 @@ $UESP_MOBILE_SERVERS = array(
 		'dev.m.uesp.net',
 );
 
-if (in_array($host, $UESP_MOBILE_SERVERS, TRUE)) 
+if (isset($_SERVER['HTTP_HOST']) && in_array($_SERVER['HTTP_HOST'], $UESP_MOBILE_SERVERS, TRUE)) 
 {
 	$uespIsMobile = true;
 }
@@ -78,11 +67,10 @@ $UESP_APP_SERVERS = array(
 		'content1.app.uesp.net',
 		'content2.app.uesp.net',
 		'content3.app.uesp.net',
-		'content4.app.uesp.net',
 		'dev.app.uesp.net',
 );
 
-if (in_array($host, $UESP_APP_SERVERS, TRUE))
+if (isset($_SERVER['HTTP_HOST']) && (in_array($_SERVER['HTTP_HOST'], $UESP_APP_SERVERS, TRUE))) 
 {
 	$uespIsApp = true;
 	$uespIsMobile = true;
@@ -96,6 +84,8 @@ $uespLanguageSuffix = "";
 
 # TODO: More robust language detection
 $wgLanguageCode = "en";
+
+$host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : "";
 
 if ($host == "pt.uesp.net" || $host == "pt.m.uesp.net" || $host == "pt.app.uesp.net" || $host == "apppt.uesp.net" || $host == "devpt.uesp.net")
 {
@@ -124,10 +114,8 @@ if ($wgLanguageCode != "en")
 
 $wgLocalInterwikis = array( $wgLanguageCode );
 
-$wgUrlPrefix = ($uespIsDev ? "dev" . ($wgLanguageCode != "en" ? $wgLanguageCode : "") : ($uespIsApp ? "app" : ($uespIsMobile ? $wgLanguageCode.".m" : $wgLanguageCode)));
-$wgServer = "https://$wgUrlPrefix.uesp.net";
 # Set server according to environment and host name
-/*if ($uespIsDev)
+if ($uespIsDev)
 {
 	$wgServer = "https://dev" . $wgLanguageCode . ".uesp.net";
 	if ($wgLanguageCode == "en") $wgServer = "https://dev.uesp.net";
@@ -144,7 +132,7 @@ elseif ($uespIsMobile)
 else 
 {
 	$wgServer = "https://" . $wgLanguageCode . ".uesp.net";
-}*/
+}
 
 # Check command line arguments (this only parses long options related to the UESP).
 if (php_sapi_name() == "cli") {
@@ -204,3 +192,5 @@ if (php_sapi_name() == "cli") {
 		if (defined('STDERR')) fwrite(STDERR, "\tForcing UESP backup1 wiki!\n");
 	}
 }
+
+$wgUpgradeKey = '23d6efe193d5236f';
