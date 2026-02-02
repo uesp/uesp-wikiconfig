@@ -410,7 +410,8 @@ $wgDefaultUserOptions['wikieditor-preview'] = 0;
 $wgDefaultUserOptions['wikieditor-publish'] = 0;
 
 wfLoadExtension( 'Scribunto' );
-$wgScribuntoDefaultEngine = 'luastandalone';
+$wgScribuntoDefaultEngine = 'luasandbox';
+$wgScribuntoEngineConf['luasandbox']['cpuLimit'] = 10;
 
 wfLoadExtension( "PageSpeedLog" );
 $wgPageSpeedLogFile = "/var/log/httpd/pagespeed.log";
@@ -463,4 +464,38 @@ $wgEnableMetaDescriptionFunctions = true;
 
 wfLoadExtension( 'UespCustomCode' );
 
-$egAnonBlockedSpecialPages = ['WantedPages','MostLinkedCategories'];
+$egAnonBlockedPages = [];
+$egAnonBlockedSpecialPages = [
+	'AncientPages',
+	'BrokenRedirects',
+	'DeadendPages',
+	'Diff',
+	'DoubleRedirects',
+	'FewestRevisions',
+	'GadgetUsage',
+	'LonelyPages',
+	'LongPages',
+	'MobileDiff',
+	'MostCategories',
+	'MostLInkedPages',
+	'MostLinkedCategories',
+	'MostLinkedFiles',
+	'MostRevisions',
+	'MostTranscludedPages',
+	'PagesWithProp',
+	'ProtectedPages',
+	'ProtectedTitles',
+	'ShortPages',
+	'SpecialPagesWithMetaVar',
+	'UncategorizedCategories',
+	'UncategorizedFiles',
+	'UncategorizedPages',
+	'UncategorizedTemplates',
+	'UnusedCategories',
+	'UnusedFiles',
+	'UnusedPages',
+	'UnusedTemplates',
+	'WantedPages',
+	'NewFiles',
+	'ListFiles'
+];

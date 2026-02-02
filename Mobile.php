@@ -39,17 +39,13 @@ $wgHooks['BeforeInitialize'][] = 'uespMobileInit';
 
 function uespMobileInit (&$title, &$article, &$output, &$user, $request, $mediaWiki)
 {
-	global $uespIsApp, $wgServer;
+	global $uespIsApp;
 	
 	if ($uespIsApp) return;
 	
 	$mobileContext = MobileContext::singleton();
 	$displayMobile = $mobileContext->shouldDisplayMobileView();
 	$host = $_SERVER['HTTP_HOST'];
-	if (!isset($host)){
-		$fullserver = explode('://', $_SERVER['SERVER_NAME'], 2);
-		$host = count($fullserver) == 2 ? $fullserver[1] : '';
-	}
 	
 	$stopMobileRedirect = $request->getCookie('stopMobileRedirect', '');
 	if ($stopMobileRedirect == "true") $displayMobile = false;

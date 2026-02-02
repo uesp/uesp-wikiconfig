@@ -49,6 +49,7 @@ $UESP_MOBILE_SERVERS = array(
 		'content1.m.uesp.net',
 		'content2.m.uesp.net',
 		'content3.m.uesp.net',
+		'content4.m.uesp.net',
 		'mobile.uesp.net',
 		'mobile1.uesp.net',
 		'mobile2.uesp.net',
@@ -77,6 +78,7 @@ $UESP_APP_SERVERS = array(
 		'content1.app.uesp.net',
 		'content2.app.uesp.net',
 		'content3.app.uesp.net',
+		'content4.app.uesp.net',
 		'dev.app.uesp.net',
 );
 
@@ -122,8 +124,10 @@ if ($wgLanguageCode != "en")
 
 $wgLocalInterwikis = array( $wgLanguageCode );
 
+$wgUrlPrefix = ($uespIsDev ? "dev" . ($wgLanguageCode != "en" ? $wgLanguageCode : "") : ($uespIsApp ? "app" : ($uespIsMobile ? $wgLanguageCode.".m" : $wgLanguageCode)));
+$wgServer = "https://$wgUrlPrefix.uesp.net";
 # Set server according to environment and host name
-if ($uespIsDev)
+/*if ($uespIsDev)
 {
 	$wgServer = "https://dev" . $wgLanguageCode . ".uesp.net";
 	if ($wgLanguageCode == "en") $wgServer = "https://dev.uesp.net";
@@ -140,7 +144,7 @@ elseif ($uespIsMobile)
 else 
 {
 	$wgServer = "https://" . $wgLanguageCode . ".uesp.net";
-}
+}*/
 
 # Check command line arguments (this only parses long options related to the UESP).
 if (php_sapi_name() == "cli") {

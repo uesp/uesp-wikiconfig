@@ -169,3 +169,4 @@ if ($uespIsDev)
 	$wgLogo = "//images.uesp.net/e/e2/UESP_Wiki_Dev_Logo.png";
 }
 
+$wgRCLinkDays = [1,3,7,14,30,90];
