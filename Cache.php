@@ -8,6 +8,7 @@
 $wgMainCacheType = CACHE_MEMCACHED;
 //$wgSessionsInObjectCache = false;
 $wgSessionCacheType = CACHE_DB;
+$wgAuthenticationTokenVersion = "2";
 $wgObjectCacheSessionExpiry = 100000;
 $wgMemCachedServers = array($UESP_SERVER_MEMCACHED . ":11000");
 
