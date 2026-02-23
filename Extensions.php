@@ -466,13 +466,17 @@ wfLoadExtension( 'UespCustomCode' );
 
 $egAnonBlockedPages = [];
 $egAnonBlockedSpecialPages = [
+	'AbuseLog',
 	'AncientPages',
 	'BrokenRedirects',
+	'Contributions',
 	'DeadendPages',
 	'Diff',
 	'DoubleRedirects',
 	'FewestRevisions',
 	'GadgetUsage',
+	'ListFiles',
+	'Log',
 	'LonelyPages',
 	'LongPages',
 	'MobileDiff',
@@ -482,7 +486,9 @@ $egAnonBlockedSpecialPages = [
 	'MostLinkedFiles',
 	'MostRevisions',
 	'MostTranscludedPages',
+	'NewFiles',
 	'PagesWithProp',
+	'PrefixIndex',
 	'ProtectedPages',
 	'ProtectedTitles',
 	'ShortPages',
@@ -495,5 +501,7 @@ $egAnonBlockedSpecialPages = [
 	'UnusedFiles',
 	'UnusedPages',
 	'UnusedTemplates',
-	'WantedPages'
+	'UserRights',
+	'WantedPages',
+	'WhatLinksHere',
 ];
