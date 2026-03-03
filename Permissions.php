@@ -54,6 +54,9 @@ $wgGroupPermissions['bot']['editprotected'] = true;
 $wgGroupPermissions['bot']['protect'] = true;
 $wgGroupPermissions['bot']['tboverride'] = true;
 
+$wgGroupPermissions['bureaucrat']['deletelogentry'] = true;
+$wgGroupPermissions['bureaucrat']['deleterevision'] = true;
+
 $wgGroupPermissions['cartographer']['map'] = true;
 $wgGroupPermissions['cartographer']['mapedit'] = true;
 $wgGroupPermissions['cartographer']['esomapedit'] = true;
