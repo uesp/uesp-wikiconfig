@@ -12,10 +12,13 @@ $wgAuthenticationTokenVersion = "2";
 $wgObjectCacheSessionExpiry = 100000;
 $wgMemCachedServers = array($UESP_SERVER_MEMCACHED . ":11000");
 
-$wgCacheEpoch = 20250607170041;
+$wgCacheEpoch = 20260417004458;
 
 $wgFileCacheDirectory = "/mnt/uesp/filecache";
-$wgUseFileCache = true;
+$wgUseFileCache = false;
+
+	// Need this to make sure there is a Content-length header output
+$wgDisableOutputCompression = true;
 
 if ($uespIsDev)
 {
@@ -28,7 +31,7 @@ else
 {
 	$wgFileCacheDirectory = "/mnt/uesp/filecache" . $uespLanguageSuffix;
 	$wgCacheDirectory = "/home/uesp/cache/" . $uespLanguageSuffix;
-	$wgSquidMaxage = 86400;
+	$wgSquidMaxAge = 86400;
 	$wgSquidServers = array($UESP_SERVER_SQUID1);
 	$wgUseSquid = true;
 	$wgUsePrivateIPs = true;
