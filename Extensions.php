@@ -414,7 +414,6 @@ $wgScribuntoDefaultEngine = 'luastandalone';
 $wgScribuntoEngineConf['luastandalone']['cpuLimit'] = 10;
 
 wfLoadExtension( "PageSpeedLog" );
-$wgPageSpeedLogFile = "/var/log/httpd/pagespeed.log";
 
 wfLoadExtension( "UespPatreon" );
 $wgSharedTables[] = 'patreon_user';	//Should be in extension but is not working
