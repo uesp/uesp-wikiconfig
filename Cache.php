@@ -24,7 +24,7 @@ if ($uespIsDev)
 {
 	$wgUseFileCache = false;
 	$wgCacheDirectory = "/home/uesp/cache/dev";
-	$wgMemCachedServers = array($UESP_SERVER_BACKUP1 . ":11000");
+	$wgMemCachedServers = array($UESP_SERVER_DEV1 . ":11000");
 	$wgCookiePrefix = "uesp_net_wikidev";
 }
 else

@@ -17,12 +17,12 @@ if ($uespIsDev)
 {
 	$wgDBname = "uesp_net_wikidev" . $uespLanguageSuffix;
 	$uespWikiDBName = $wgDBname;
-	$wgDBserver = $UESP_SERVER_BACKUP1;
+	$wgDBserver = $UESP_SERVER_DEV1;
 	$wgDBuser = $uespWikiUser;
 	$wgDBpassword = $uespWikiPW;
 	$wgDBservers = array(
 		array(          # content3 is the only dev wiki database
-				'host' => $UESP_SERVER_BACKUP1,
+				'host' => $UESP_SERVER_DEV1,
 				'dbname' => $uespWikiDBName,
 				'user' => $uespWikiUser,
 				'password' => $uespWikiPW,

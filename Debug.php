@@ -12,6 +12,12 @@ $wgDebugToolbar = true;
 $wgShowSQLErrors = true;
 $wgShowExceptionDetails = true;
 $wgDevelopmentWarnings = true;
+
+if (isset($_GET["debugEnable"])) {
+	$wgShowDebug = true;
+	$wgDebugLogFile = "$IP/../logs/debug-{$wgDBname}.log";
+}
+
 /*
 $wgDebugLogGroups = array(
 	'resourceloader' => '/var/log/httpd/mwresourceloader.log',
@@ -23,3 +29,4 @@ $wgDebugLogGroups = array(
 	#'myextension' => '/var/log/mediawiki/myextension.log',
 	#'somegroup' => '/var/log/mediawiki/somegroup.log',
 ); //*/
+
